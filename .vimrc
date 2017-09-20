@@ -22,3 +22,10 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+" base16 shell
+let base16colorspace=256  " Access colors present in 256 colorspace
+if filereadable(expand("~/.vimrc_background"))
+  source ~/.vimrc_background
+endif
+" airline
+"set laststatus=2

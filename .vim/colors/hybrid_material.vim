@@ -1,0 +1,1 @@
+../bundle/vim-hybrid-material/colors/hybrid_material.vim
