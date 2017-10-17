@@ -18,6 +18,8 @@ export CLICOLOR=1
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
+# Autocomplete a slash after ..
+zstyle ':completion:*' special-dirs true
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -106,6 +108,6 @@ function mkcd() { mkdir -p "$@" && cd "$_"; }
 alias dockerhelp='docker --help | less'
 alias ll='ls -lah'
 alias gitnocert='git -c http.sslVerify=false'
-alias gitlog='git log --graph'
+alias gitlog='git log --graph --pretty=oneline'
 alias tmux='tmux -2'
 alias livesshtun='ssh -L 8080:lpuppmv001.unix.live.local:80 -Nf lpuppmv001.unix.live.local'
