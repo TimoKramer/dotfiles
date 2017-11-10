@@ -2,7 +2,9 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/timokramer/.oh-my-zsh
+export ZSH=/Users/tkramer/.oh-my-zsh
+
+fpath=(/usr/local/share/zsh-completions $fpath)
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -95,6 +97,10 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/projekte
 source /usr/local/bin/virtualenvwrapper.sh
 
+# homebrew
+export PATH="/usr/local/opt/curl/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -109,5 +115,13 @@ alias dockerhelp='docker --help | less'
 alias ll='ls -lah'
 alias gitnocert='git -c http.sslVerify=false'
 alias gitlog='git log --graph --pretty=oneline'
+alias gits='git status'
 alias tmux='tmux -2'
 alias livesshtun='ssh -L 8080:lpuppmv001.unix.live.local:80 -Nf lpuppmv001.unix.live.local'
+alias pip='pip3'
+alias python='python3'
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

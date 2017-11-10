@@ -1,12 +1,20 @@
+" syntax highlighting
+syntax on
+" special file handlers
+au BufRead,BufNewFile *.conf set filetype=icinga2
+"au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+" encoding
+set encoding=utf-8
+" indenting
 filetype plugin indent on
+" smartcase search
+set smartcase
 " show existing tab with 4 spaces width
 set tabstop=4
 " when indenting with '>', use 4 spaces width
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
-" turn syntax highlighting on
-syntax on
 " turn line numbering on
 set number
 " enable pathogen
@@ -18,6 +26,7 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 " syntastic settings
 let g:syntastic_sh_checkers = ['shellcheck']
+let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
