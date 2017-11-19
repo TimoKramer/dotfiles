@@ -38,3 +38,5 @@ if filereadable(expand("~/.vimrc_background"))
 endif
 " airline
 "set laststatus=2
+let g:airline_theme='base16_google'
+let g:airline_symbols_ascii = 1
