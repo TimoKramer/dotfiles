@@ -15,3 +15,4 @@ alias ll='ls -lah'
 alias gitnocert='git -c http.sslVerify=false'
 alias gitlog='git log --graph'
 #alias tmux='tmux -2'
+source /home/timo/.tmc-autocomplete.sh
