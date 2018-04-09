@@ -123,7 +123,7 @@ export EDITOR='vim'
 function mkcd() { mkdir -p "$@" && cd "$_"; }
 alias dockerhelp='docker --help | less'
 alias ls='ls --color'
-alias ll='ls -lah'
+alias ll='ls -lahrt'
 alias gitlog='git log --graph --pretty=oneline'
 alias gits='git status'
 alias tmux='tmux -2'
@@ -131,3 +131,6 @@ alias pip='pip3'
 alias python='python3'
 alias updatepac='sudo pacman -Syu'
 alias updateaur="yaourt -Syu --devel --aur"
+alias switchuser="light-locker-command -l"
+alias mullvad="export MULLVAD_USE_GTK3=yes && mullvad"
+alias peng="ping -c 3 heise.de"
