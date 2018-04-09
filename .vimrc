@@ -1,3 +1,5 @@
+" yaml handling
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 " syntax highlighting
 syntax on
 " special file handlers
@@ -33,9 +35,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 " base16 shell
 let base16colorspace=256  " Access colors present in 256 colorspace
-if filereadable(expand("~/.vimrc_background"))
-  source ~/.vimrc_background
-endif
 " airline
 "set laststatus=2
 let g:airline_theme='base16_google'

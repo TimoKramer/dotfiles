@@ -9,7 +9,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 #ZSH_THEME="material"
 
 # Setup terminal, and turn on colors
-export TERM=xterm-256color
+#export TERM=xterm-256color
 export CLICOLOR=1
 
 # Autocomplete a slash after ..
@@ -53,13 +53,15 @@ zstyle ':completion:*' special-dirs true
 ##############################################################################
 # History Configuration
 ##############################################################################
-HISTSIZE=10000               #How many lines of history to keep in memory
+HISTSIZE=5000               #How many lines of history to keep in memory
 HISTFILE=~/.zsh_history     #Where to save history to disk
-SAVEHIST=10000               #Number of history entries to save to disk
+SAVEHIST=5000               #Number of history entries to save to disk
 #HISTDUP=erase               #Erase duplicates in the history file
-setopt    appendhistory     #Append history to the history file (no overwriting)
-setopt    sharehistory      #Share history across terminals
-setopt    incappendhistory  #Immediately append to the history file, not just when a term is killed
+setopt    append_history     #Append history to the history file (no overwriting)
+setopt	  hist_ignore_all_dups
+unsetopt  hist_ignore_space
+setopt    share_history      #Share history across terminals
+setopt    inc_append_history  #Immediately append to the history file, not just when a term is killed
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -104,12 +106,20 @@ export EDITOR='vim'
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+# http://zshwiki.org/home/zle/bindkeys
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
+bindkey  "^[[3"   delete-char
+
 # Python
 #export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 #export PATH="${HOME}/Library/Python/3.6/bin:$PATH"
 #export WORKON_HOME=${HOME}/.virtualenvs
 #export PROJECT_HOME=${HOME}/projekte
 #source /usr/local/bin/virtualenvwrapper.sh
+#
+# ANDROID
+export ANDROID_HOME=/opt/android-sdk
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -126,6 +136,8 @@ alias ls='ls --color'
 alias ll='ls -lahrt'
 alias gitlog='git log --graph --pretty=oneline'
 alias gits='git status'
+alias gitd='git diff'
+alias gitl='git log --graph --oneline'
 alias tmux='tmux -2'
 alias pip='pip3'
 alias python='python3'
