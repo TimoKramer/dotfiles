@@ -143,6 +143,7 @@ alias pip='pip3'
 alias python='python3'
 alias updatepac='sudo pacman -Syu'
 alias updateaur="yaourt -Syu --devel --aur"
+alias remove-orphans='sudo pacman -Rns '
 alias switchuser="light-locker-command -l"
 alias mullvad="export MULLVAD_USE_GTK3=yes && mullvad"
 alias peng="ping -c 3 heise.de"
