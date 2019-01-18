@@ -138,12 +138,19 @@ alias gitlog='git log --graph --pretty=oneline'
 alias gits='git status'
 alias gitd='git diff'
 alias gitl='git log --graph --oneline'
+alias gitg='git grep'
 alias tmux='tmux -2'
 alias pip='pip3'
 alias python='python3'
 alias updatepac='sudo pacman -Syu'
-alias updateaur="yaourt -Syu --devel --aur"
+alias updateaur="yay -Sua --devel --timeupdate"
 alias remove-orphans='sudo pacman -Rns '
 alias switchuser="light-locker-command -l"
-alias mullvad="export MULLVAD_USE_GTK3=yes && mullvad"
 alias peng="ping -c 3 heise.de"
+alias clj="clojure"
+
+# opam configuration
+test -r /home/timo/.opam/opam-init/init.zsh && . /home/timo/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+# graalvm
+export PATH="/opt/graalvm/bin:${PATH}"
