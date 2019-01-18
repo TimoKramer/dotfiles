@@ -1,3 +1,6 @@
+" tab completion
+set wildmode=longest,list,full
+set wildmenu
 " yaml handling
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 " syntax highlighting
