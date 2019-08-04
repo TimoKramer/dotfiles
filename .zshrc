@@ -148,9 +148,16 @@ alias remove-orphans='sudo pacman -Rns $(pacman -Qtdq)'
 alias switchuser="light-locker-command -l"
 alias peng="ping -c 3 heise.de"
 alias clj="clojure"
+alias vpnan='sudo systemctl start wg-quick@mullvad-de1.service'
+alias vpnaus='sudo systemctl stop wg-quick@mullvad-de1.service'
+alias pip2='python2 -m pip'
 
 # opam configuration
 test -r /home/timo/.opam/opam-init/init.zsh && . /home/timo/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 # graalvm
-export PATH="/opt/graalvm/bin:${PATH}"
+export PATH="/usr/lib/jvm/java-8-graal/bin:${PATH}"
+# python local
+export PATH="/home/timo/.local/bin:${PATH}"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

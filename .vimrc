@@ -1,3 +1,22 @@
+" Vundle
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'ycm-core/YouCompleteMe'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+
 " tab completion
 set wildmode=longest,list,full
 set wildmenu
@@ -5,13 +24,8 @@ set wildmenu
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 " syntax highlighting
 syntax on
-" special file handlers
-au BufRead,BufNewFile *.conf set filetype=icinga2
-"au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 " encoding
 set encoding=utf-8
-" indenting
-filetype plugin indent on
 " smartcase search
 set smartcase
 " show existing tab with 4 spaces width
@@ -22,13 +36,8 @@ set shiftwidth=4
 set expandtab
 " turn line numbering on
 set number
-" enable pathogen
-execute pathogen#infect()
-" ctrlP settings
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
+" python setup
+let python_highlight_all = 1
 " syntastic settings
 let g:syntastic_sh_checkers = ['shellcheck']
 let g:syntastic_python_checkers = ['flake8']
@@ -42,3 +51,7 @@ let base16colorspace=256  " Access colors present in 256 colorspace
 "set laststatus=2
 let g:airline_theme='base16_google'
 let g:airline_symbols_ascii = 1
+
+"
+" write with sudo rights
+command WW :execute ':silent w !sudo tee % > /dev/null' | :edit!
