@@ -133,7 +133,10 @@ export ANDROID_HOME=/opt/android-sdk
 function mkcd() { mkdir -p "$@" && cd "$_"; }
 alias dockerhelp='docker --help | less'
 alias ls='ls --color'
-alias ll='ls -lahrt'
+#alias ll='ls -lahrt'
+alias ll="exa --all --reverse --sort=modified --long --group-directories-first"
+alias cat='bat'
+alias grep='rg'
 alias gitlog='git log --graph --pretty=oneline'
 alias gits='git status'
 alias gitd='git diff'
@@ -142,9 +145,10 @@ alias gitg='git grep'
 alias tmux='tmux -2'
 alias pip='pip3'
 alias python='python3'
-alias updatepac='sudo pacman -Syu'
-alias updateaur="yay -Sua --devel --timeupdate"
-alias remove-orphans='sudo pacman -Rns $(pacman -Qtdq)'
+alias pacupdate='sudo pacman -Syu'
+alias pacupdateaur="yay -Sua --devel --timeupdate"
+alias pacorphans='sudo pacman -Rns $(pacman -Qtdq)'
+alias paccache='sudo pacman -Sc'
 alias switchuser="light-locker-command -l"
 alias peng="ping -c 3 heise.de"
 alias clj="clojure"
@@ -152,11 +156,8 @@ alias vpnan='sudo systemctl start wg-quick@mullvad-de1.service'
 alias vpnaus='sudo systemctl stop wg-quick@mullvad-de1.service'
 alias pip2='python2 -m pip'
 
-# opam configuration
-test -r /home/timo/.opam/opam-init/init.zsh && . /home/timo/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
 # graalvm
-export PATH="/usr/lib/jvm/java-8-graal/bin:${PATH}"
+export GRAALVM_HOME="/usr/lib/jvm/graalvm-ce-19.2.1"
 # python local
 export PATH="/home/timo/.local/bin:${PATH}"
 

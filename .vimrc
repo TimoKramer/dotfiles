@@ -7,6 +7,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ycm-core/YouCompleteMe'
+Plugin 'nvie/vim-flake8'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -35,9 +36,12 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 " turn line numbering on
-set number
+set relativenumber
 " python setup
 let python_highlight_all = 1
+" youcompleteme settings
+let g:ycm_autoclose_preview_window_after_insertion=1
+let g:ycm_autoclose_preview_window_after_completion=1
 " syntastic settings
 let g:syntastic_sh_checkers = ['shellcheck']
 let g:syntastic_python_checkers = ['flake8']
@@ -52,6 +56,13 @@ let base16colorspace=256  " Access colors present in 256 colorspace
 let g:airline_theme='base16_google'
 let g:airline_symbols_ascii = 1
 
-"
+" FZF
+set rtp+=~/.fzf
+
+" Commands
 " write with sudo rights
 command WW :execute ':silent w !sudo tee % > /dev/null' | :edit!
+
+" remapping escape
+cnoremap kj <C-C>
+cnoremap jk <C-C>
