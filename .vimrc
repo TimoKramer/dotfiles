@@ -61,7 +61,7 @@ set rtp+=~/.fzf
 
 " Commands
 " write with sudo rights
-command WW :execute ':silent w !sudo tee % > /dev/null' | :edit!
+"command WW :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
 " remapping escape
 cnoremap kj <C-C>
