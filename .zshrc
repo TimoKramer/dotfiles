@@ -1,3 +1,8 @@
+# loading config files
+for config_file (${HOME}/.zsh/*.zsh); do
+	source $config_file
+done
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -9,7 +14,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 #ZSH_THEME="material"
 
 # Setup terminal, and turn on colors
-#export TERM=xterm-256color
+#export TERM=screen-256color
 export CLICOLOR=1
 
 # Autocomplete a slash after ..
@@ -93,13 +98,6 @@ prompt walters
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -111,15 +109,19 @@ bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
 bindkey  "^[[3"   delete-char
 
-# Python
+# PYTHON
 #export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 #export PATH="${HOME}/Library/Python/3.6/bin:$PATH"
 #export WORKON_HOME=${HOME}/.virtualenvs
 #export PROJECT_HOME=${HOME}/projekte
 #source /usr/local/bin/virtualenvwrapper.sh
+export PATH="/home/timo/.local/bin:${PATH}"
 #
 # ANDROID
-export ANDROID_HOME=/opt/android-sdk
+#export ANDROID_HOME=/opt/android-sdk
+
+# GRAALVM
+export GRAALVM_HOME="/usr/lib/jvm/graalvm-ce-19.2.1"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -155,10 +157,3 @@ alias clj="clojure"
 alias vpnan='sudo systemctl start wg-quick@mullvad-de1.service'
 alias vpnaus='sudo systemctl stop wg-quick@mullvad-de1.service'
 alias pip2='python2 -m pip'
-
-# graalvm
-export GRAALVM_HOME="/usr/lib/jvm/graalvm-ce-19.2.1"
-# python local
-export PATH="/home/timo/.local/bin:${PATH}"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
