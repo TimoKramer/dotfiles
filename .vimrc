@@ -10,6 +10,7 @@ Plugin 'ycm-core/YouCompleteMe'
 Plugin 'nvie/vim-flake8'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'google/vim-colorscheme-primary'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -26,7 +27,7 @@ set wildmenu
 " yaml handling
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 " syntax highlighting
-syntax on
+syntax enable
 " encoding
 set encoding=utf-8
 " smartcase search
@@ -57,8 +58,10 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-" base16 shell
-let base16colorspace=256  " Access colors present in 256 colorspace
+" theme
+set t_Co=256
+set background=dark
+colorscheme primary
 " airline
 "set laststatus=2
 let g:airline_theme='base16_google'
