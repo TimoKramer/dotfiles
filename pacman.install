@@ -1,0 +1,26 @@
+alacritty
+bat
+boot
+chromium
+clojure
+docker
+emacs
+exa
+firefox
+fzf
+jq
+keepassxc
+leiningen
+mpv
+nextcloud-client
+ranger
+ripgrep
+rustup
+tig
+tmux
+xfce4-xkb-plugin
+zsh
+zsh-completions
+## AUR
+#spotify
+#mullvad-vpn-cli
