@@ -133,9 +133,7 @@ export GRAALVM_HOME="/usr/lib/jvm/graalvm-ce-19.2.1"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #mkdir and cd
 function mkcd() { mkdir -p "$@" && cd "$_"; }
-alias dockerhelp='docker --help | less'
 alias ls='ls --color'
-#alias ll='ls -lahrt'
 alias ll="exa --all --reverse --sort=modified --long --group-directories-first"
 alias cat='bat'
 alias grep='rg'
@@ -151,9 +149,7 @@ alias pacupdate='sudo pacman -Syu'
 alias pacupdateaur="yay -Sua --devel --timeupdate"
 alias pacorphans='sudo pacman -Rns $(pacman -Qtdq)'
 alias paccache='sudo pacman -Sc'
+alias pacdeldeps='sudo pacman -Rcns'
 alias switchuser="light-locker-command -l"
 alias peng="ping -c 3 heise.de"
 alias clj="clojure"
-alias vpnan='sudo systemctl start wg-quick@mullvad-de1.service'
-alias vpnaus='sudo systemctl stop wg-quick@mullvad-de1.service'
-alias pip2='python2 -m pip'
