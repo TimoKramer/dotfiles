@@ -58,7 +58,7 @@ set background=dark
 colorscheme primary
 " airline
 "set laststatus=2
-let g:airline_theme='base16_google'
+let g:airline_theme='term'
 let g:airline_symbols_ascii = 1
 
 " FZF
