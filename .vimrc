@@ -1,19 +1,13 @@
-" Vundle
-set nocompatible              " be iMproved, required
-filetype off                  " required
+call plug#begin()
+Plug 'VundleVim/Vundle.vim'
+Plug 'ycm-core/YouCompleteMe'
+Plug 'nvie/vim-flake8'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'google/vim-colorscheme-primary'
+call plug#end()
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'ycm-core/YouCompleteMe'
-Plugin 'nvie/vim-flake8'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'google/vim-colorscheme-primary'
-
-call vundle#end()            " required
-filetype plugin indent on    " required
+filetype plugin indent on
 
 " Brief help
 " :PluginList       - lists configured plugins
@@ -66,8 +60,6 @@ set rtp+=~/.fzf
 
 " Commands
 " write with sudo rights
-"command WW :execute ':silent w !sudo tee % > /dev/null' | :edit!
+command WW :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
-" remapping escape
-cnoremap kj <C-C>
-cnoremap jk <C-C>
+:imap jj <Esc>

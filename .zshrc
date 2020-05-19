@@ -14,7 +14,8 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 #ZSH_THEME="material"
 
 # Setup terminal, and turn on colors
-#export TERM=screen-256color
+export TERM=tmux-256color
+export EDITOR=vim
 export CLICOLOR=1
 
 # Autocomplete a slash after ..
@@ -116,9 +117,7 @@ bindkey  "^[[3"   delete-char
 #export PROJECT_HOME=${HOME}/projekte
 #source /usr/local/bin/virtualenvwrapper.sh
 export PATH="/home/timo/.local/bin:${PATH}"
-#
-# ANDROID
-#export ANDROID_HOME=/opt/android-sdk
+export PATH="/home/timo/.config/nvim/plugged/vim-iced/bin:${PATH}"
 
 # GRAALVM
 export GRAALVM_HOME="/usr/lib/jvm/graalvm-ce-19.2.1"
@@ -152,4 +151,5 @@ alias paccache='sudo pacman -Sc'
 alias pacdeldeps='sudo pacman -Rcns'
 alias switchuser="light-locker-command -l"
 alias peng="ping -c 3 heise.de"
-alias clj="clojure"
+alias rbl='clojure -Sdeps "{:deps {com.bhauman/rebel-readline {:mvn/version \"LATEST\"}}}" -m rebel-readline.main'
+alias cljserve='clojure -Sdeps "{:deps {nasus {:mvn/version \"LATEST\"}}}" -m http.server'
