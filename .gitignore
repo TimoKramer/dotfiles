@@ -2,3 +2,4 @@
 .vim/.netrwhist
 .vim/bundle/
 .config/nvim/plugged/
+.config/nvim/.netrwhist

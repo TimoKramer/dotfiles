@@ -1,0 +1,18 @@
+{:style   :community
+ :list    {:indent-arg 2}
+ :map     {:comma?    false
+           :justify?  true
+           :force-nl? true}
+ :width   120
+ :fn-map  {"f/try-all"     :binding
+           "f/when-failed" :arg1-force-nl
+           "m/defstate"    :arg1-pair
+           "comment"       :flow
+           "defn"          :arg1-force-nl
+           "defn-"         :arg1-force-nl
+           "try"           :flow
+           "do"            :flow
+           "fn"            :arg1-force-nl
+           "format"        :gt2-force-nl}
+ :binding {:justify?  true
+           :force-nl? true}}

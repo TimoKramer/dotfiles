@@ -125,15 +125,15 @@ au FocusGained,BufEnter * checktime
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let mapleader = ","
-let g:mapleader = ","
+let mapleader = " "
+let g:mapleader = " "
 
 " Fast saving
 nmap <leader>w :w!<cr>
 
-" :W sudo saves the file
+" :WW sudo saves the file
 " (useful for handling the permission-denied error)
-command! W w !sudo tee % > /dev/null
+command! WW w !sudo tee % > /dev/null
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -299,9 +299,18 @@ map <leader>bc :Bclose<cr>
 
 " Close all the buffers
 map <leader>ba :bufdo bd<cr>
-
 map <leader>l :bnext<cr>
 map <leader>h :bprevious<cr>
+map <leader>1 :buffer 1<cr>
+map <leader>2 :buffer 2<cr>
+map <leader>2 :buffer 3<cr>
+map <leader>2 :buffer 4<cr>
+map <leader>2 :buffer 5<cr>
+map <leader>2 :buffer 6<cr>
+map <leader>2 :buffer 7<cr>
+map <leader>2 :buffer 8<cr>
+map <leader>2 :buffer 9<cr>
+map <leader>Tab :bp<cr>
 
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
@@ -475,7 +484,6 @@ let g:gitgutter_realtime = 1
 let g:rainbow_active = 1
 let g:vim_markdown_folding_disabled = 1
 let g:airline#extensions#ale#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:iced_enable_default_key_mappings = v:true
 
 if has("nvim") || has("gui_vimr")
@@ -509,6 +517,7 @@ colorscheme onedark
 let g:airline_theme='onedark'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Turn persistent undo on
