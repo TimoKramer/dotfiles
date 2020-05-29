@@ -3,3 +3,5 @@
 .vim/bundle/
 .config/nvim/plugged/
 .config/nvim/.netrwhist
+.vim/plugged/
+.vim/undodir/
