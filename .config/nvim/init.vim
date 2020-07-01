@@ -67,7 +67,7 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'scrooloose/nerdcommenter'
@@ -86,7 +86,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 Plug 'hashivim/vim-terraform'
 Plug 'henrik/vim-indexed-search'
-Plug 'ambv/black', {'for': 'python'}
+Plug 'psf/black', {'for': 'python'}
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'dense-analysis/ale'
 Plug 'elixir-editors/vim-elixir'

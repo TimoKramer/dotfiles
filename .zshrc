@@ -125,6 +125,9 @@ export GRAALVM_HOME="/usr/lib/jvm/graalvm-ce-19.2.1"
 # vim-iced
 export ICED_REPL_CLOJURE_CLI_CMD=clojure
 
+# man
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -145,6 +148,7 @@ alias gits='git status'
 alias gitd='git diff'
 alias gitl='git log --graph --oneline'
 alias gitg='git grep'
+alias vim='nvim -u ~/.vimrc'
 alias tmux='tmux -2'
 alias pip='pip3'
 alias python='python3'
