@@ -15,7 +15,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 # Setup terminal, and turn on colors
 export TERM=tmux-256color
-export EDITOR=vim
+export EDITOR=nvim
 export CLICOLOR=1
 
 # Autocomplete a slash after ..
@@ -122,6 +122,9 @@ export PATH="/home/timo/.config/nvim/plugged/vim-iced/bin:${PATH}"
 # GRAALVM
 export GRAALVM_HOME="/usr/lib/jvm/graalvm-ce-19.2.1"
 
+# vim-iced
+export ICED_REPL_CLOJURE_CLI_CMD=clojure
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -134,6 +137,7 @@ export GRAALVM_HOME="/usr/lib/jvm/graalvm-ce-19.2.1"
 function mkcd() { mkdir -p "$@" && cd "$_"; }
 alias ls='ls --color'
 alias ll="exa --all --reverse --sort=modified --long --group-directories-first"
+alias vim="nvim"
 alias cat='bat'
 alias grep='rg'
 alias gitlog='git log --graph --pretty=oneline'

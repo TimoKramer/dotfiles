@@ -2,3 +2,5 @@
 	email = fw-git@timokramer.de
 	name = Timo Kramer
 	signingkey = 0B2A77E1D12CFC45
+[pull]
+	rebase = true

@@ -297,13 +297,13 @@ map <leader>l :bnext<cr>
 map <leader>h :bprevious<cr>
 map <leader>1 :buffer 1<cr>
 map <leader>2 :buffer 2<cr>
-map <leader>2 :buffer 3<cr>
-map <leader>2 :buffer 4<cr>
-map <leader>2 :buffer 5<cr>
-map <leader>2 :buffer 6<cr>
-map <leader>2 :buffer 7<cr>
-map <leader>2 :buffer 8<cr>
-map <leader>2 :buffer 9<cr>
+map <leader>3 :buffer 3<cr>
+map <leader>4 :buffer 4<cr>
+map <leader>5 :buffer 5<cr>
+map <leader>6 :buffer 6<cr>
+map <leader>7 :buffer 7<cr>
+map <leader>8 :buffer 8<cr>
+map <leader>9 :buffer 9<cr>
 map <leader>Tab :bp<cr>
 
 " Useful mappings for managing tabs
