@@ -61,6 +61,12 @@
 " => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
@@ -80,7 +86,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 Plug 'hashivim/vim-terraform'
 Plug 'henrik/vim-indexed-search'
-Plug 'ambv/black', {'for': 'python'}
+Plug 'psf/black', {'for': 'python'}
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'dense-analysis/ale'
 Plug 'elixir-editors/vim-elixir'
@@ -88,10 +94,10 @@ Plug 'tpope/vim-dispatch'
 Plug 'osyo-manga/vim-over'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-ctrlspace/vim-ctrlspace'
 
 " Lispy
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'liquidz/vim-iced', {'for': 'clojure'}
 Plug 'guns/vim-sexp', {'for': 'clojure'}
 Plug 'liquidz/vim-iced-coc-source', {'for': 'clojure'}
@@ -99,7 +105,7 @@ Plug 'guns/vim-clojure-static', {'for': 'clojure'}
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 
 " Colorscheme
-Plug 'joshdick/onedark.vim'
+Plug 'ayu-theme/ayu-vim'
 
 call plug#end()
 
@@ -293,6 +299,7 @@ map <leader>bc :Bclose<cr>
 
 " Close all the buffers
 map <leader>ba :bufdo bd<cr>
+
 map <leader>l :bnext<cr>
 map <leader>h :bprevious<cr>
 map <leader>1 :buffer 1<cr>
@@ -479,6 +486,8 @@ let g:rainbow_active = 1
 let g:vim_markdown_folding_disabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:iced_enable_default_key_mappings = v:true
+let g:strip_whitespace_confirm=0
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 if has("nvim") || has("gui_vimr")
     let g:CtrlSpaceDefaultMappingKey = "<C-space> "
@@ -506,13 +515,11 @@ set guioptions-=L
 set background=dark
 set termguicolors
 
-colorscheme onedark
+colorscheme ayu
 
-let g:onedark_termcolors=16
-let g:airline_theme='onedark'
+let g:airline_theme='ayu'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Turn persistent undo on
@@ -554,7 +561,7 @@ if executable('rg')
 endif
 
 if executable("rg")
-    let g:CtrlSpaceGlobCommand = 'rg -g ""'
+    let g:CtrlSpaceGlobCommand = 'rg --vimgrep --smart-case'
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
