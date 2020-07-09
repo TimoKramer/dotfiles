@@ -15,7 +15,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 # Setup terminal, and turn on colors
 export TERM=tmux-256color
-export EDITOR=nvim
+export EDITOR="nvim -u ~/.vimrc"
 export CLICOLOR=1
 
 # Autocomplete a slash after ..
@@ -140,7 +140,6 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 function mkcd() { mkdir -p "$@" && cd "$_"; }
 alias ls='ls --color'
 alias ll="exa --all --reverse --sort=modified --long --group-directories-first"
-alias vim="nvim"
 alias cat='bat'
 alias grep='rg'
 alias gitlog='git log --graph --pretty=oneline'
