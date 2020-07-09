@@ -131,7 +131,7 @@ let g:mapleader = " "
 " Fast saving
 nmap <leader>w :w!<cr>
 
-" :WW sudo saves the file
+" :W sudo saves the file
 " (useful for handling the permission-denied error)
 command! WW w !sudo tee % > /dev/null
 
@@ -302,16 +302,6 @@ map <leader>ba :bufdo bd<cr>
 
 map <leader>l :bnext<cr>
 map <leader>h :bprevious<cr>
-map <leader>1 :buffer 1<cr>
-map <leader>2 :buffer 2<cr>
-map <leader>3 :buffer 3<cr>
-map <leader>4 :buffer 4<cr>
-map <leader>5 :buffer 5<cr>
-map <leader>6 :buffer 6<cr>
-map <leader>7 :buffer 7<cr>
-map <leader>8 :buffer 8<cr>
-map <leader>9 :buffer 9<cr>
-map <leader>Tab :bp<cr>
 
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
@@ -487,7 +477,6 @@ let g:vim_markdown_folding_disabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:iced_enable_default_key_mappings = v:true
 let g:strip_whitespace_confirm=0
-let g:airline#extensions#tabline#buffer_nr_show = 1
 
 if has("nvim") || has("gui_vimr")
     let g:CtrlSpaceDefaultMappingKey = "<C-space> "
@@ -563,8 +552,3 @@ endif
 if executable("rg")
     let g:CtrlSpaceGlobCommand = 'rg --vimgrep --smart-case'
 endif
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => remapping keys
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:imap jj <Esc>
