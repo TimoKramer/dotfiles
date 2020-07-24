@@ -1,0 +1,4 @@
+{
+    "python.venvPath": "/home/timo/.local/share/virtualenv",
+    "coc.source.iced.enable": true
+}

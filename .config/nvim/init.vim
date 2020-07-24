@@ -1,108 +1,27 @@
-" @@@@@@@@@@@@@@@@@@@@@@@@@@@@%,                  .*%@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-" @@@@@@@@@@@@@@@@@@@@@@@*                               #@@@@@@@@@@@@@@@@@@@@@@@
-" @@@@@@@@@@@@@@@@@@@*         .*/(((((((((((((((/*.         #@@@@@@@@@@@@@@@@@@@
-" @@@@@@@@@@@@@@@@*       ,/(((((((((((((((((((((((((((/,       *@@@@@@@@@@@@@@@@
-" @@@@@@@@@@@@@#      ,/(((((((((((((((((((((((((((((((((((/.      &@@@@@@@@@@@@@
-" @@@@@@@@@@@*     ./(((((((((((((((((((((((((((((((((((((((((/      #@@@@@@@@@@@
-" @@@@@@@@@*     *(((((((((((((((((((((((((((((((((((((((((((((((,     #@@@@@@@@@
-" @@@@@@@#     *(((((((((((((((((((((((((((((((((((((((((((((((((((,     @@@@@@@@
-" @@@@@@.    */*.          .*/((((((//*,,,,,*/(((((((((((((((((((((((.    #@@@@@@
-" @@@@@                                           ./((((((((((((((((((/    *@@@@@
-" @@@@                                .,,,,..         ,(((((((((((((((((     @@@@
-" @@@           .*///////*          ,************,.      /(((((((((((((((.   .@@@
-" @@         ///////////     .,.      ***************.     /((((((((((((((.   ,@@
-" @.      ,///////////.    ,,,,,,,     ****************.    *((((((((((((((    #@
-" @      ////////////     ,,,,,,,,,     ****************,    .(((((((((((((/    @
-"      ,////////////    .,,,,,,,,,,,    .*****************    ,(((((((((((((.   *
-"     ,////////////,   .,,,,,,,,,,,,,    ,*****************    *((((((((((((/
-"     /////////////    ,,,,,,,,,,,,,,,    *****************,    (((((((((((((
-"    *////////////,   .,,,,,,,,,,,,,,,.   ,*****************    /((((((((((((.
-"    *////////////.   ,,,,,,,,,,,,,,,,     *****************.   *((((((((((((,
-"    *////////////.   ,,,,,,,,,,,,,,,      .****************.   *((((((((((((,
-"    *////////////*   .,,,,,,,,,,,,,   ,.   ,***************    /((((((((((((.
-"    ./////////////    ,,,,,,,,,,,.   ,,,    **************,    (((((((((((((
-"     /////////////,    ,,,,,,,,,.   ,,,,,    *************    /((((((((((((.
-" .   */////////////.   .,,,,,,,.   ,,,,,,.    ***********    ,((((((((((((,    @
-" @    //////////////.    ,,,,,,   .,,,,,,,     ********,    ,(((((((((((/      @
-" @    .//////////////,    .,,,    ,,,,,,,,,     ,*****     /((((((((((/       @@
-" @@    ,///////////////           ,,,,,,,,,,      .,     .((((((((/*          @@
-" @@@    ,////////////////         ,,,,,,,,,,,.                               @@@
-" @@@@    ./////////////////,          ....                                  @@@@
-" @@@@@     ////////////////////.                 ,/*,              .,,     @@@@@
-" @@@@@@     .////////////////////////******/////////////////////////     @@@@@@@
-" @@@@@@@@     ,///////////////////////////////////////////////////.     @@@@@@@@
-" @@@@@@@@@@     ,///////////////////////////////////////////////.     @@@@@@@@@@
-" @@@@@@@@@@@@      //////////////////////////////////////////*      @@@@@@@@@@@@
-" @@@@@@@@@@@@@@       *///////////////////////////////////*       @@@@@@@@@@@@@@
-" @@@@@@@@@@@@@@@@@       .*///////////////////////////*        @@@@@@@@@@@@@@@@@
-" @@@@@@@@@@@@@@@@@@@@          .*//////////////**.          @@@@@@@@@@@@@@@@@@@@
-" @@@@@@@@@@@@@@@@@@@@@@@@                               @@@@@@@@@@@@@@@@@@@@@@@@
-
-" Maintainer:
-"       Rahul De
-"       rahul@mailbox.org
-"       https://github.com/lispyclouds
-"
-" Derives:
-"       - https://github.com/amix/vimrc
-"
-" Prerquisites:
-"       - NeoVIM or VIM 8+
-"       - https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode
-"
-" Instructions:
-"       - Install the prerequisites
-"       - Replace ~/.vimrc with this
-"       - Run in commandline: vim +PlugClean +PlugInstall +qall
-"       - Buy me a dunkel mass beer and enjoy!
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Plugins
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
-Plug 'rust-lang/rust.vim', {'for': 'rust'}
-Plug 'cespare/vim-toml', {'for': 'rust'}
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'mileszs/ack.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'luochen1990/rainbow'
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
-Plug 'ryanoasis/vim-devicons'
-Plug 'easymotion/vim-easymotion'
+Plug 'jceb/vim-orgmode', {'for': 'orgmode'}
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
-Plug 'hashivim/vim-terraform'
-Plug 'henrik/vim-indexed-search'
-Plug 'psf/black', {'for': 'python'}
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'dense-analysis/ale'
-Plug 'elixir-editors/vim-elixir'
-Plug 'tpope/vim-dispatch'
-Plug 'osyo-manga/vim-over'
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'vim-ctrlspace/vim-ctrlspace'
 
-" Lispy
+" Coding
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Python
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+Plug 'Vimjas/vim-python-pep8-indent'
+
+" Clojure
 Plug 'liquidz/vim-iced', {'for': 'clojure'}
 Plug 'guns/vim-sexp', {'for': 'clojure'}
 Plug 'liquidz/vim-iced-coc-source', {'for': 'clojure'}
 Plug 'guns/vim-clojure-static', {'for': 'clojure'}
-Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
+Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release', 'for': 'clojure'}
 
 " Colorscheme
 Plug 'ayu-theme/ayu-vim'
@@ -131,7 +50,7 @@ let g:mapleader = " "
 " Fast saving
 nmap <leader>w :w!<cr>
 
-" :WW sudo saves the file
+" :W sudo saves the file
 " (useful for handling the permission-denied error)
 command! WW w !sudo tee % > /dev/null
 
@@ -265,26 +184,20 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
-autocmd BufEnter * EnableStripWhitespaceOnSave
-
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-
-
-""""""""""""""""""""""""""""""
-" => Visual mode related
-""""""""""""""""""""""""""""""
-" Visual mode pressing * or # searches for the current selection
-" Super useful! From an idea by Michael Naumann
-vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
-vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
+function! StripTrailingWhitespace()
+  if !&binary && &filetype != 'diff'
+    normal mz
+    normal Hmy
+    %s/\s\+$//e
+    normal 'yz<CR>
+    normal `z
+  endif
+endfunction
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-map <space> /
-
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
 
@@ -299,19 +212,9 @@ map <leader>bc :Bclose<cr>
 
 " Close all the buffers
 map <leader>ba :bufdo bd<cr>
+
 map <leader>l :bnext<cr>
 map <leader>h :bprevious<cr>
-map <leader>1 :buffer 1<cr>
-map <leader>2 :buffer 2<cr>
-map <leader>3 :buffer 3<cr>
-map <leader>4 :buffer 4<cr>
-map <leader>5 :buffer 5<cr>
-map <leader>6 :buffer 6<cr>
-map <leader>7 :buffer 7<cr>
-map <leader>8 :buffer 8<cr>
-map <leader>9 :buffer 9<cr>
-map <leader>Tab :bp<cr>
-map <leader>q :Bclose<cr>
 
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
@@ -351,19 +254,6 @@ set laststatus=2
 
 " Format the status line
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Spell checking
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Pressing ,ss will toggle and untoggle spell checking
-map <leader>ss :setlocal spell!<cr>
-
-" Shortcuts using <leader>
-map <leader>sn ]s
-map <leader>sp [s
-map <leader>sa zg
-map <leader>s? z=
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -445,6 +335,7 @@ au FileType python set cindent
 au FileType python set cinkeys-=0#
 au FileType python set indentkeys-=0#
 
+let g:ale_python_auto_pipenv = 1
 
 """"""""""""""""""""""""""""""
 " => JavaScript
@@ -458,25 +349,13 @@ au FileType javascript imap <c-a> alert();<esc>hi
 au FileType javascript inoremap <buffer> $r return
 au FileType javascript inoremap <buffer> $f //--- PH<esc>FP2xi
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Nerd Tree
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:NERDTreeWinPos = "left"
-let NERDTreeShowHidden=1
-let NERDTreeIgnore = ['\.pyc$', '__pycache__']
-let g:NERDTreeWinSize=35
-map <leader>nn :NERDTreeToggle<cr>
-map <leader>nb :NERDTreeFromBookmark<Space>
-map <leader>nf :NERDTreeFind<cr>
+autocmd FileType json syntax match Comment +\/\/.\+$+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Git gutter (Git diff)
+" => YAML
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <silent> <leader>d :GitGutterToggle<cr>
-let g:gitgutter_enabled = 1
-let g:gitgutter_realtime = 1
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -484,8 +363,8 @@ let g:gitgutter_realtime = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:rainbow_active = 1
 let g:vim_markdown_folding_disabled = 1
-let g:airline#extensions#ale#enabled = 1
 let g:iced_enable_default_key_mappings = v:true
+let g:strip_whitespace_confirm=0
 
 if has("nvim") || has("gui_vimr")
     let g:CtrlSpaceDefaultMappingKey = "<C-space> "
@@ -515,17 +394,12 @@ set termguicolors
 
 colorscheme ayu
 
-let g:airline_theme='ayu'
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Turn persistent undo on
 "    means that you can undo even when you close a buffer/VIM
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Put plugins and dictionaries in this dir (also on Windows)
-let vimDir = '$HOME/.vim'
+let vimDir = '$HOME/.config/nvim'
 let &runtimepath.=','.vimDir
 
 " Keep undo history across sessions by storing it in a file
@@ -562,8 +436,3 @@ endif
 if executable("rg")
     let g:CtrlSpaceGlobCommand = 'rg --vimgrep --smart-case'
 endif
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => remapping keys
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:imap jj <Esc>
