@@ -17,6 +17,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 export TERM=tmux-256color
 export EDITOR="nvim -u ~/.vimrc"
 export CLICOLOR=1
+export BAT_THEME="OneHalfLight"
 
 # Autocomplete a slash after ..
 zstyle ':completion:*' special-dirs true
@@ -116,9 +117,10 @@ bindkey  "^[[3"   delete-char
 #export WORKON_HOME=${HOME}/.virtualenvs
 #export PROJECT_HOME=${HOME}/projekte
 #source /usr/local/bin/virtualenvwrapper.sh
-export PATH="/home/timo/.local/bin:${PATH}"
-export PATH="/home/timo/.vim/plugged/vim-iced/bin:${PATH}"
-export PATH="/home/timo/.pulumi/bin:${PATH}"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.config/nvim/plugged/vim-iced/bin"
+export PATH="$PATH:$HOME/.pulumi/bin"
+export PATH="$PATH:$HOME/go/bin"
 
 # GRAALVM
 export GRAALVM_HOME="/usr/lib/jvm/graalvm-ce-19.2.1"
@@ -148,11 +150,9 @@ alias gits='git status'
 alias gitd='git diff'
 alias gitl='git log --graph --oneline'
 alias gitg='git grep'
-alias vim='nvim -u ~/.vimrc'
-alias minvim='nvim'
+alias vim='nvim'
 alias tmux='tmux -2'
 alias pip='pip3'
-alias python='python3'
 alias pacupdate='sudo pacman -Syu'
 alias pacupdateaur="yay -Sua --devel --timeupdate"
 alias pacorphans='sudo pacman -Rns $(pacman -Qtdq)'

@@ -6,12 +6,11 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'tpope/vim-surround'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Clojure
 Plug 'liquidz/vim-iced', {'for': 'clojure'}
-Plug 'guns/vim-sexp', {'for': 'clojure'}
-Plug 'liquidz/vim-iced-coc-source', {'for': 'clojure'}
+"Plug 'liquidz/vim-iced-coc-source', {'for': 'clojure'}
 Plug 'guns/vim-clojure-static', {'for': 'clojure'}
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release', 'for': 'clojure'}
 

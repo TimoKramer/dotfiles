@@ -5,6 +5,7 @@
 .config/nvim/.netrwhist
 .vim/plugged/
 .vim/undodir/
+# vim clojure
 .classpath
 .project
 .settings/
