@@ -69,33 +69,10 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
-Plug 'rust-lang/rust.vim', {'for': 'rust'}
-Plug 'cespare/vim-toml', {'for': 'rust'}
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'mileszs/ack.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'luochen1990/rainbow'
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
-Plug 'ryanoasis/vim-devicons'
-Plug 'easymotion/vim-easymotion'
-Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
-Plug 'hashivim/vim-terraform'
-Plug 'henrik/vim-indexed-search'
-Plug 'psf/black', {'for': 'python'}
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'dense-analysis/ale'
-Plug 'elixir-editors/vim-elixir'
 Plug 'tpope/vim-dispatch'
-Plug 'osyo-manga/vim-over'
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'vim-ctrlspace/vim-ctrlspace'
 
 " Lispy
 Plug 'liquidz/vim-iced', {'for': 'clojure'}
@@ -125,8 +102,8 @@ au FocusGained,BufEnter * checktime
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let mapleader = " "
-let g:mapleader = " "
+let mapleader = ","
+let g:mapleader = ","
 
 " Fast saving
 nmap <leader>w :w!<cr>
@@ -265,8 +242,6 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
-autocmd BufEnter * EnableStripWhitespaceOnSave
-
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 
@@ -282,9 +257,6 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-map <space> /
-
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
 
@@ -436,45 +408,11 @@ au FileType python set cinkeys-=0#
 au FileType python set indentkeys-=0#
 
 
-""""""""""""""""""""""""""""""
-" => JavaScript
-"""""""""""""""""""""""""""""""
-au FileType javascript setl fen
-au FileType javascript setl nocindent
-
-au FileType javascript imap <c-t> $log();<esc>hi
-au FileType javascript imap <c-a> alert();<esc>hi
-
-au FileType javascript inoremap <buffer> $r return
-au FileType javascript inoremap <buffer> $f //--- PH<esc>FP2xi
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Nerd Tree
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:NERDTreeWinPos = "left"
-let NERDTreeShowHidden=1
-let NERDTreeIgnore = ['\.pyc$', '__pycache__']
-let g:NERDTreeWinSize=35
-map <leader>nn :NERDTreeToggle<cr>
-map <leader>nb :NERDTreeFromBookmark<Space>
-map <leader>nf :NERDTreeFind<cr>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Git gutter (Git diff)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <silent> <leader>d :GitGutterToggle<cr>
-let g:gitgutter_enabled = 1
-let g:gitgutter_realtime = 1
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc plugin options
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:rainbow_active = 1
 let g:vim_markdown_folding_disabled = 1
-let g:airline#extensions#ale#enabled = 1
 let g:iced_enable_default_key_mappings = v:true
 let g:strip_whitespace_confirm=0
 

@@ -117,7 +117,8 @@ bindkey  "^[[3"   delete-char
 #export PROJECT_HOME=${HOME}/projekte
 #source /usr/local/bin/virtualenvwrapper.sh
 export PATH="/home/timo/.local/bin:${PATH}"
-export PATH="/home/timo/.config/nvim/plugged/vim-iced/bin:${PATH}"
+export PATH="/home/timo/.vim/plugged/vim-iced/bin:${PATH}"
+export PATH="/home/timo/.pulumi/bin:${PATH}"
 
 # GRAALVM
 export GRAALVM_HOME="/usr/lib/jvm/graalvm-ce-19.2.1"
@@ -161,3 +162,6 @@ alias switchuser="light-locker-command -l"
 alias peng="ping -c 3 heise.de"
 alias rbl='clojure -Sdeps "{:deps {com.bhauman/rebel-readline {:mvn/version \"LATEST\"}}}" -m rebel-readline.main'
 alias cljserve='clojure -Sdeps "{:deps {nasus {:mvn/version \"LATEST\"}}}" -m http.server'
+
+# add Pulumi to the PATH
+export PATH=$PATH:$HOME/.pulumi/bin

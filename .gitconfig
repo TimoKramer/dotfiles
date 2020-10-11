@@ -4,3 +4,5 @@
 	signingkey = 0B2A77E1D12CFC45
 [pull]
 	rebase = true
+[core]
+	excludesfile = ~/.gitignore

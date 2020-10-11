@@ -5,3 +5,6 @@
 .config/nvim/.netrwhist
 .vim/plugged/
 .vim/undodir/
+.classpath
+.project
+.settings/
