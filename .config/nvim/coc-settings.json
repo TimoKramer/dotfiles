@@ -1,4 +1,9 @@
 {
-    "python.venvPath": "/home/timo/.local/share/virtualenv",
-    "coc.source.iced.enable": true
+    "coc.preferences.rootPatterns": [
+        ".git",
+        ".hg",
+        ".projections.json",
+        "Pipfile"
+    ],
+    "python.venvPath": "/home/timo/.local/share/virtualenvs"
 }

@@ -9,3 +9,5 @@
 .classpath
 .project
 .settings/
+.lein/repl-history
+.lein/self-installs/

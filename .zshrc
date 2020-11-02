@@ -14,9 +14,9 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 #ZSH_THEME="material"
 
 # Setup terminal, and turn on colors
-export TERM=tmux-256color
-export EDITOR="nvim -u ~/.vimrc"
+export TERM=xterm-kitty
 export CLICOLOR=1
+export EDITOR="nvim"
 export BAT_THEME="OneHalfLight"
 
 # Autocomplete a slash after ..
@@ -150,6 +150,7 @@ alias gits='git status'
 alias gitd='git diff'
 alias gitl='git log --graph --oneline'
 alias gitg='git grep'
+alias gitf='git fetch --all'
 alias vim='nvim'
 alias tmux='tmux -2'
 alias pip='pip3'
@@ -161,6 +162,7 @@ alias pacdeldeps='sudo pacman -Rcns'
 alias switchuser="light-locker-command -l"
 alias peng="ping -c 3 heise.de"
 alias rbl='clojure -Sdeps "{:deps {com.bhauman/rebel-readline {:mvn/version \"LATEST\"}}}" -m rebel-readline.main'
+alias repl='clj -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]" --interactive'
 alias cljserve='clojure -Sdeps "{:deps {nasus {:mvn/version \"LATEST\"}}}" -m http.server'
 
 # add Pulumi to the PATH
