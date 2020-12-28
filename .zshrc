@@ -123,7 +123,7 @@ export PATH="$PATH:$HOME/.pulumi/bin"
 export PATH="$PATH:$HOME/go/bin"
 
 # GRAALVM
-export GRAALVM_HOME="/usr/lib/jvm/graalvm-ce-19.2.1"
+export GRAALVM_HOME="/usr/lib/jvm/graalvm-ce-java11-20.3.0"
 
 # vim-iced
 export ICED_REPL_CLOJURE_CLI_CMD=clojure
@@ -142,7 +142,7 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 #mkdir and cd
 function mkcd() { mkdir -p "$@" && cd "$_"; }
 alias ls='ls --color'
-alias ll="exa --all --reverse --sort=modified --long --group-directories-first"
+alias ll="exa --all --reverse --sort=modified --long --group-directories-first --header --bytes"
 alias cat='bat'
 alias grep='rg'
 alias gitlog='git log --graph --pretty=oneline'
@@ -155,7 +155,7 @@ alias vim='nvim'
 alias tmux='tmux -2'
 alias pip='pip3'
 alias pacupdate='sudo pacman -Syu'
-alias pacupdateaur="yay -Sua --devel --timeupdate"
+alias aurupdate="yay -Sua --devel --timeupdate"
 alias pacorphans='sudo pacman -Rns $(pacman -Qtdq)'
 alias paccache='sudo pacman -Sc'
 alias pacdeldeps='sudo pacman -Rcns'
@@ -167,3 +167,15 @@ alias cljserve='clojure -Sdeps "{:deps {nasus {:mvn/version \"LATEST\"}}}" -m ht
 
 # add Pulumi to the PATH
 export PATH=$PATH:$HOME/.pulumi/bin
+
+
+# PROMPT
+brname () {
+  a=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+  if [ -n "$a" ]; then
+    echo " [$a]"
+  else
+    echo ""
+  fi
+}
+#export PROMPT="%B%(?..[%?] )%b%n $(brname)> "
