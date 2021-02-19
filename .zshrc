@@ -145,7 +145,6 @@ alias ls='ls --color'
 alias ll="exa --all --reverse --sort=modified --long --group-directories-first --header --bytes"
 alias cat='bat'
 alias grep='rg'
-alias gitlog='git log --graph --pretty=oneline'
 alias gits='git status'
 alias gitd='git diff'
 alias gitl='git log --graph --oneline'
@@ -161,7 +160,7 @@ alias paccache='sudo pacman -Sc'
 alias pacdeldeps='sudo pacman -Rcns'
 alias switchuser="light-locker-command -l"
 alias peng="ping -c 3 heise.de"
-alias rbl='clojure -Sdeps "{:deps {com.bhauman/rebel-readline {:mvn/version \"LATEST\"}}}" -m rebel-readline.main'
+alias rbl='clj -Sdeps "{:deps {com.bhauman/rebel-readline {:mvn/version \"LATEST\"}}}" -m rebel-readline.main'
 alias repl='clj -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]" --interactive'
 alias cljserve='clojure -Sdeps "{:deps {nasus {:mvn/version \"LATEST\"}}}" -m http.server'
 

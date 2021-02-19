@@ -33,6 +33,9 @@ set hlsearch
 " Makes search act like search in modern browsers
 set incsearch
 
+" Avoid jumping to beginning of line
+set nostartofline
+
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = ","
@@ -81,8 +84,11 @@ set incsearch
 set magic
 
 " Ask for confirmation when abondoning buffer with unsafed changes
-set confirm
+set hidden
 
+" Better whitespace
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Turn persistent undo on
 "    means that you can undo even when you close a buffer/VIM
@@ -159,9 +165,6 @@ map <silent> <leader><cr> :noh<cr>
 " Close the current buffer
 map <leader>bc :Bclose<cr>
 
-" Return to last edit position when opening files (You want this!)
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -229,3 +232,30 @@ function! <SID>BufcloseCloseIt()
         execute("bdelete! ".l:currentBufNum)
     endif
 endfunction
+
+" Save current view settings on a per-window, per-buffer basis.
+function! AutoSaveWinView()
+    if !exists("w:SavedBufView")
+        let w:SavedBufView = {}
+    endif
+    let w:SavedBufView[bufnr("%")] = winsaveview()
+endfunction
+
+" Restore current view settings.
+function! AutoRestoreWinView()
+    let buf = bufnr("%")
+    if exists("w:SavedBufView") && has_key(w:SavedBufView, buf)
+        let v = winsaveview()
+        let atStartOfFile = v.lnum == 1 && v.col == 0
+        if atStartOfFile && !&diff
+            call winrestview(w:SavedBufView[buf])
+        endif
+        unlet w:SavedBufView[buf]
+    endif
+endfunction
+
+" When switching buffers, preserve window view.
+if v:version >= 700
+    autocmd BufLeave * call AutoSaveWinView()
+    autocmd BufEnter * call AutoRestoreWinView()
+endif

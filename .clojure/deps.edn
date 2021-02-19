@@ -1,0 +1,10 @@
+{
+ :aliases
+ {:reveal {:extra-deps {nrepl/nrepl                 {:mvn/version "RELEASE"}
+                        vlaaad/reveal               {:mvn/version "RELEASE"}}
+           :main-opts ["-m" "nrepl.cmdline"
+                       "--middleware" "[vlaaad.reveal.nrepl/middleware]"
+                       "--interactive"]
+           :jvm-opts ["-Dvlaaad.reveal.prefs={:theme,:light,:font-family,\"https://ff.static.1001fonts.net/u/b/ubuntu.mono.ttf\",:font-size,18}"]}
+  :outdated {:extra-deps {antq/antq {:mvn/version "RELEASE"}}
+             :main-opts ["-m" "antq.core"]}}}
