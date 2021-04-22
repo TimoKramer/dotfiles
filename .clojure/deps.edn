@@ -1,14 +1,19 @@
 {
  :aliases
- {:reveal {:extra-deps {nrepl/nrepl   {:mvn/version "RELEASE"}
-                        vlaaad/reveal {:mvn/version "RELEASE"}}
-           :main-opts ["-m" "nrepl.cmdline"
-                       "--middleware" "[vlaaad.reveal.nrepl/middleware]"
-                       "--interactive"]
-           :jvm-opts ["-Dvlaaad.reveal.prefs={:theme,:light,:font-family,\"https://ff.static.1001fonts.net/u/b/ubuntu.mono.ttf\",:font-size,18}"]}
-  :repl {:extra-deps {cider/cider-nrepl           {:mvn/version "0.19.0"}
-                      nrepl/nrepl                 {:mvn/version "0.5.3"}
-                      org.clojure/tools.namespace {:mvn/version "0.2.11"}}
-         :main-opts ["-m" "nrepl.cmdline" "--middleware" "[cider.nrepl/cider-middleware]"]}
-  :outdated {:extra-deps {antq/antq {:mvn/version "RELEASE"}}
-             :main-opts ["-m" "antq.core"]}}}
+  {:new {:extra-deps {com.github.seancorfield/clj-new
+                      {:mvn/version "1.1.264"}}
+         :exec-fn clj-new/create
+         :exec-args {:template "app"}}
+   :repl {:extra-deps {nrepl/nrepl {:mvn/version "0.7.0"}
+                       cider/cider-nrepl {:mvn/version "0.25.2"}}
+          :main-opts ["-m" "nrepl.cmdline"
+                      "--middleware" "[cider.nrepl/cider-middleware]"
+                      "--interactive"]}
+   :reveal {:extra-deps {nrepl/nrepl {:mvn/version "RELEASE"}
+                         vlaaad/reveal {:mvn/version "RELEASE"}}
+            :main-opts ["-m" "nrepl.cmdline"
+                        "--middleware" "[vlaaad.reveal.nrepl/middleware]"
+                        "--interactive"]
+            :jvm-opts ["-Dvlaaad.reveal.prefs={:theme,:light,:font-family,\"https://ff.static.1001fonts.net/u/b/ubuntu.mono.ttf\",:font-size,18}"]}
+   :outdated {:extra-deps {antq/antq {:mvn/version "RELEASE"}}
+              :main-opts ["-m" "antq.core"]}}}

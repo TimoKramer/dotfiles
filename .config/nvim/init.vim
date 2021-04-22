@@ -8,8 +8,8 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'rakr/vim-one'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'junegunn/fzf.vim'
-Plug 'fiatjaf/neuron.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'luochen1990/rainbow'
 
 " Clojure
 Plug 'Olical/conjure', {'tag': 'v4.6.0'}
@@ -89,6 +89,9 @@ set hidden
 " Better whitespace
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=0
+
+" Rainbow parens
+let g:rainbow_active = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Turn persistent undo on
 "    means that you can undo even when you close a buffer/VIM
