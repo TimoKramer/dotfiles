@@ -34,6 +34,7 @@
       "deps.edn",
       "package.json"
   ],
+
   "python.linting.pylintEnabled": true,
   "python.linting.flake8Enabled": false,
   "python.linting.pylintPath": "~/venvs/pylint/bin/pylint",

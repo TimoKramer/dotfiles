@@ -10,10 +10,12 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'luochen1990/rainbow'
+Plug 'iamcco/coc-diagnostic', {'do': 'echo \"install with pacman\"'}
 
 " Clojure
-Plug 'Olical/conjure', {'tag': 'v4.6.0'}
+Plug 'Olical/conjure', {'tag': 'v4.17.0', 'for': 'clojure'}
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release', 'for': 'clojure'}
+Plug 'clojure-lsp/clojure-lsp', {'do': 'echo \"install with pacman\"', 'for': 'clojure'}
 
 call plug#end()
 
