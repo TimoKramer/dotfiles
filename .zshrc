@@ -117,10 +117,10 @@ bindkey  "^[[3"   delete-char
 #export WORKON_HOME=${HOME}/.virtualenvs
 #export PROJECT_HOME=${HOME}/projekte
 #source /usr/local/bin/virtualenvwrapper.sh
-export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.config/nvim/plugged/vim-iced/bin"
 export PATH="$PATH:$HOME/.pulumi/bin"
 export PATH="$PATH:$HOME/go/bin"
+export PATH="$HOME/.local/bin:$PATH"
 
 # GRAALVM
 export GRAALVM_HOME="/usr/lib/jvm/graalvm-ce-java11-20.3.0"
@@ -167,7 +167,6 @@ alias cljserve='clojure -Sdeps "{:deps {nasus {:mvn/version \"LATEST\"}}}" -m ht
 # add Pulumi to the PATH
 export PATH=$PATH:$HOME/.pulumi/bin
 
-
 # PROMPT
 brname () {
   a=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
@@ -177,4 +176,9 @@ brname () {
     echo ""
   fi
 }
+
 #export PROMPT="%B%(?..[%?] )%b%n $(brname)> "
+
+# ======= DIRENV =======
+# Hook direnv to bash
+eval "$(direnv hook zsh)"
