@@ -16,4 +16,6 @@
                         "--interactive"]
             :jvm-opts ["-Dvlaaad.reveal.prefs={:theme,:light,:font-family,\"https://ff.static.1001fonts.net/u/b/ubuntu.mono.ttf\",:font-size,18}"]}
    :outdated {:extra-deps {antq/antq {:mvn/version "RELEASE"}}
-              :main-opts ["-m" "antq.core"]}}}
+              :main-opts ["-m" "antq.core"]}
+   :nvd {:extra-deps {lein-nvd/lein-nvd {:mvn/version "1.4.1"}}
+         :main-opts ["-m" "nvd.task.check"]}}}
