@@ -8,9 +8,9 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'rakr/vim-one'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'junegunn/fzf.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'luochen1990/rainbow'
-Plug 'iamcco/coc-diagnostic', {'do': 'echo \"install with pacman\"'}
+Plug 'hashivim/vim-terraform'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Clojure
 Plug 'Olical/conjure', {'tag': 'v4.17.0', 'for': 'clojure'}
@@ -18,6 +18,11 @@ Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release', 'for': 'clojure'}
 Plug 'clojure-lsp/clojure-lsp', {'do': 'echo \"install with pacman\"', 'for': 'clojure'}
 
 call plug#end()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => CoC Install
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:coc_global_extensions = ['coc-json', 'coc-python', 'coc-diagnostic']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -62,6 +67,8 @@ command! WW w !sudo tee % > /dev/null
 command! W  write
 :command WQ wq
 :command Wq wq
+" Blame me, cant quite without typo-ing!
+command! Q quit
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -213,6 +220,7 @@ set noswapfile
 " => Python
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:python3_host_prog='/usr/bin/python'
+"let g:python3_host_prog="~/venvs/neovim/bin/python"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions

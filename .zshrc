@@ -163,6 +163,7 @@ alias peng="ping -c 3 heise.de"
 alias rbl='clj -Sdeps "{:deps {com.bhauman/rebel-readline {:mvn/version \"LATEST\"}}}" -m rebel-readline.main'
 alias repl='clj -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]" --interactive'
 alias cljserve='clojure -Sdeps "{:deps {nasus {:mvn/version \"LATEST\"}}}" -m http.server'
+alias vimf='nvim $(fzf)'
 
 # add Pulumi to the PATH
 export PATH=$PATH:$HOME/.pulumi/bin
