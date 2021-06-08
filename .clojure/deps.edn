@@ -18,4 +18,12 @@
    :outdated {:extra-deps {antq/antq {:mvn/version "RELEASE"}}
               :main-opts ["-m" "antq.core"]}
    :nvd {:extra-deps {lein-nvd/lein-nvd {:mvn/version "1.4.1"}}
-         :main-opts ["-m" "nvd.task.check"]}}}
+         :main-opts ["-m" "nvd.task.check"]}
+   :fformat {:extra-deps {cljfmt/cljfmt {:mvn/version "0.7.0"}}
+             :main-opts ["-m" "cljfmt.main" "fix"]}
+   :jar {:replace-deps {com.github.seancorfield/depstar {:mvn/version "2.0.216"}}
+         :exec-fn hf.depstar/jar
+         :exec-args {}}
+   :install {:extra-deps {slipset/deps-deploy {:mvn/version "0.1.5"}}
+             :exec-fn deps-deploy.deps-deploy/deploy
+             :exec-args {:installer :local}}}}

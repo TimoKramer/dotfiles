@@ -11,6 +11,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'luochen1990/rainbow'
 Plug 'hashivim/vim-terraform'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'iamcco/coc-diagnostic', {'do': 'echo \"install with pacman\"'}
+Plug 'hashivim/vim-terraform'
+Plug 'tpope/vim-dispatch'
+Plug 'radenling/vim-dispatch-neovim'
 
 " Clojure
 Plug 'Olical/conjure', {'tag': 'v4.17.0', 'for': 'clojure'}
