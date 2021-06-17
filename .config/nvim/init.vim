@@ -15,6 +15,7 @@ Plug 'iamcco/coc-diagnostic', {'do': 'echo \"install with pacman\"'}
 Plug 'hashivim/vim-terraform'
 Plug 'tpope/vim-dispatch'
 Plug 'radenling/vim-dispatch-neovim'
+Plug 'tpope/vim-fugitive'
 
 " Clojure
 Plug 'Olical/conjure', {'tag': 'v4.17.0', 'for': 'clojure'}
@@ -181,6 +182,9 @@ map <silent> <leader><cr> :noh<cr>
 " Close the current buffer
 map <leader>bc :Bclose<cr>
 
+" Map escape to jj
+:inoremap jj <Esc>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -219,6 +223,11 @@ set laststatus=2
 set nobackup
 set nowb
 set noswapfile
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Clojure
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"let g:parinfer_logfile='/tmp/parinfer_logfile'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Python
