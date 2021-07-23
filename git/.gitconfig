@@ -6,3 +6,5 @@
 	rebase = true
 [core]
 	excludesfile = ~/.gitignore
+[alias]
+	s = status

@@ -1,3 +1,6 @@
-# dotfiles
+# Dotfiles
 
-my dotfiles for use on linux with xfce4 and a mac
+My dotfiles for use on linux with stow
+
+## Install all dotfiles
+`stow --verbose --target=${HOME} *`
