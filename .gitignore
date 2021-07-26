@@ -11,3 +11,5 @@
 .settings/
 .lein/repl-history
 .lein/self-installs/
+.clojure/.lsp/sqlite.db
+.clojure/.cpcache/

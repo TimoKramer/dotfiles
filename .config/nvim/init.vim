@@ -5,16 +5,16 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'marko-cerovac/material.nvim'
+Plug 'Shatur/neovim-ayu'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'liuchengxu/vim-better-default'
+Plug 'TimoKramer/vim-better-default'
 Plug 'mbbill/undotree'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
 Plug 'folke/which-key.nvim'
 Plug 'easymotion/vim-easymotion'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'branch': '0.5-compat'}
 Plug 'nvim-lua/popup.nvim' " required by telescope
 Plug 'nvim-lua/plenary.nvim' " required by telescope
 Plug 'nvim-telescope/telescope.nvim'
@@ -49,7 +49,7 @@ lua << EOF
 require("plenary.reload").reload_module("lualine", true)
 require('lualine').setup {
   options = {
-    theme = 'material-nvim',
+    theme = 'ayu_light',
   }
 }
 EOF
@@ -58,9 +58,10 @@ EOF
 " => Theme
 """"""""""""""""""""""""""""""
 lua << EOF
-require('material').set()
-vim.g.material_style = "lighter"
+local colors = require('ayu.colors')
+vim.cmd [[ colorscheme ayu ]]
 EOF
+set background=light
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Compe
@@ -97,6 +98,7 @@ require("nvim-treesitter.configs").setup {
   highlight = {
     enable = true,
   },
+  ensure_installed = { "clojure" },
   incremental_selection = {
     enable  = true,
     keymaps = {
@@ -265,6 +267,7 @@ command! W  write
 " Blame me, cant quite without typo-ing!
 command! Q quit
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -370,8 +373,6 @@ map <silent> <leader><cr> :noh<cr>
 " Close the current buffer
 map <leader>bc :Bclose<cr>
 
-" Map escape to jj
-:inoremap jj <Esc>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
