@@ -29,11 +29,13 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
+Plug 'radenling/vim-dispatch-neovim'
 
 " Clojure
 Plug 'Olical/conjure', {'tag': 'v4.21.0', 'for': 'clojure'}
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release', 'for': 'clojure'}
 Plug 'clojure-lsp/clojure-lsp', {'do': 'echo \"install with pacman\"', 'for': 'clojure'}
+Plug 'clojure-vim/vim-jack-in'
 
 call plug#end()
 
