@@ -5,7 +5,7 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'Shatur/neovim-ayu'
+Plug 'TimoKramer/neovim-ayu'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'TimoKramer/vim-better-default'
@@ -15,6 +15,7 @@ Plug 'hrsh7th/nvim-compe'
 Plug 'folke/which-key.nvim'
 Plug 'easymotion/vim-easymotion'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'branch': '0.5-compat'}
+Plug 'nvim-treesitter/playground', {'do': ':TSInstall query'}
 Plug 'nvim-lua/popup.nvim' " required by telescope
 Plug 'nvim-lua/plenary.nvim' " required by telescope
 Plug 'nvim-telescope/telescope.nvim'
@@ -112,6 +113,26 @@ require("nvim-treesitter.configs").setup {
     enable        = true,
     extended_mode = true,
   },
+}
+require "nvim-treesitter.configs".setup {
+  playground = {
+    enable = true,
+    disable = {},
+    updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
+    persist_queries = false, -- Whether the query persists across vim sessions
+    keybindings = {
+      toggle_query_editor = 'o',
+      toggle_hl_groups = 'i',
+      toggle_injected_languages = 't',
+      toggle_anonymous_nodes = 'a',
+      toggle_language_display = 'I',
+      focus_language = 'f',
+      unfocus_language = 'F',
+      update = 'R',
+      goto_node = '<cr>',
+      show_help = '?',
+    },
+  }
 }
 EOF
 
@@ -326,6 +347,22 @@ let maplocalleader = ","
 let g:maplocalleader = ","
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" EDN
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+lua << EOF
+vim.api.nvim_set_keymap('n', '<Leader>cf', ':!jet --pretty<CR>', { noremap=true, silent=true })
+vim.api.nvim_set_keymap('v', '<Leader>cf', ':%!jet --pretty<CR>', { noremap=true, silent=true })
+EOF
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" JSON
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+lua << EOF
+vim.api.nvim_set_keymap('n', '<Leader>jf', ":!jq -S'.'<CR>", { noremap=true, silent=true })
+vim.api.nvim_set_keymap('v', '<Leader>jf', ":%!jq -S'.'<CR>", { noremap=true, silent=true })
+EOF
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Color
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Credit joshdick
@@ -479,3 +516,4 @@ if v:version >= 700
     autocmd BufLeave * call AutoSaveWinView()
     autocmd BufEnter * call AutoRestoreWinView()
 endif
+

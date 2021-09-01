@@ -141,6 +141,7 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #mkdir and cd
 function mkcd() { mkdir -p "$@" && cd "$_"; }
+function kp() { keepassxc-cli clip --key-file Documents/Daten/keyfile Klaud/allthepasses.kdbx "$*" ; }
 alias ls='ls --color'
 alias ll="exa --all --reverse --sort=modified --long --group-directories-first --header --bytes"
 alias cat='bat'
@@ -169,17 +170,12 @@ alias vimf='nvim $(fzf)'
 export PATH=$PATH:$HOME/.pulumi/bin
 
 # PROMPT
-brname () {
-  a=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
-  if [ -n "$a" ]; then
-    echo " [$a]"
-  else
-    echo ""
-  fi
-}
+autoload -Uz vcs_info
+precmd() { vcs_info }
 
-#export PROMPT="%B%(?..[%?] )%b%n $(brname)> "
+zstyle ':vcs_info:git:*' formats '(%b)'
 
-# ======= DIRENV =======
-# Hook direnv to bash
-eval "$(direnv hook zsh)"
+setopt PROMPT_SUBST
+
+#PROMPT='%F{red}%B%(?..[%?] )%b%f%n@%U%m%u%F{208}${vcs_info_msg_0_}%f> '
+PROMPT='%F{red}%B%(?..[%?] )%b%f%F{208}${vcs_info_msg_0_}%f> '

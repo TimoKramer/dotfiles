@@ -13,3 +13,6 @@
 .lein/self-installs/
 .clojure/.lsp/sqlite.db
 .clojure/.cpcache/
+dv3.sh
+tst.sh
+.lsp/
