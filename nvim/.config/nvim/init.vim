@@ -12,14 +12,14 @@ Plug 'TimoKramer/vim-better-default'
 Plug 'mbbill/undotree'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
-Plug 'folke/which-key.nvim'
+Plug 'folke/which-key.nvim', {'branch': 'main'}
 Plug 'easymotion/vim-easymotion'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'branch': '0.5-compat'}
 Plug 'nvim-lua/popup.nvim' " required by telescope
 Plug 'nvim-lua/plenary.nvim' " required by telescope
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'p00f/nvim-ts-rainbow'
-Plug 'lewis6991/gitsigns.nvim'
+Plug 'lewis6991/gitsigns.nvim', {'branch': 'main'}
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
@@ -66,7 +66,13 @@ EOF
 set background=light
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Compe
+" => Jack-in
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+tnoremap jj <C-\><C-n>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Telescope
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 lua << EOF
 vim.api.nvim_set_keymap('n', '<Leader>ff', '<Cmd>:Telescope find_files<CR>', { noremap=true, silent=true })
