@@ -17,7 +17,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 export TERM=xterm-kitty
 export CLICOLOR=1
 export EDITOR="nvim"
-export BAT_THEME="OneHalfLight"
+export BAT_THEME="Coldark-Cold"
 
 # Autocomplete a slash after ..
 zstyle ':completion:*' special-dirs true
@@ -152,7 +152,6 @@ alias gitg='git grep'
 alias gitf='git fetch --all'
 alias vim='nvim'
 alias tmux='tmux -2'
-alias pip='pip3'
 alias pacupdate='sudo pacman -Syu'
 alias aurupdate="yay -Sua --devel --timeupdate"
 alias pacorphans='sudo pacman -Rns $(pacman -Qtdq)'
@@ -180,7 +179,3 @@ brname () {
 }
 
 #export PROMPT="%B%(?..[%?] )%b%n $(brname)> "
-
-# ======= DIRENV =======
-# Hook direnv to bash
-eval "$(direnv hook zsh)"
