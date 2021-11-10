@@ -91,6 +91,7 @@ return require('packer').startup(function(use)
   }
 
   use 'tpope/vim-eunuch'
+  use 'tpope/vim-vinegar'
 
   use {
     "blackCauldron7/surround.nvim",
