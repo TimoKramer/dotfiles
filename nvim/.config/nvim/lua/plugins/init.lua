@@ -48,6 +48,8 @@ return require('packer').startup(function(use)
     end,
   }
 
+  use 'p00f/nvim-ts-rainbow'
+
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
