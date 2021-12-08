@@ -7,10 +7,10 @@ end
 return require('packer').startup(function(use)
 
   use {
-    "mcchrish/zenbones.nvim",
-    requires = "rktjmp/lush.nvim",
+    "marko-cerovac/material.nvim",
     config = function()
-        require('plugins.zenbones')
+        vim.cmd [[colorscheme material]]
+        require('material.functions').change_style('lighter')
     end,
   }
 
@@ -51,7 +51,6 @@ return require('packer').startup(function(use)
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
-    branch = '0.5-compat',
     config = function()
       require('plugins.treesitter')
     end,

@@ -3,9 +3,11 @@ Name=Slack
 StartupWMClass=Slack
 Comment=Slack Desktop
 GenericName=Slack Client for Linux
-Exec=/usr/bin/slack --force-device-scale-factor=1.5 -s %U
+Exec=/usr/bin/slack --force-device-scale-factor=1.2 -s %U
 Icon=slack
 Type=Application
 StartupNotify=true
 Categories=GNOME;GTK;Network;InstantMessaging;
 MimeType=x-scheme-handler/slack;
+Path=
+Terminal=false

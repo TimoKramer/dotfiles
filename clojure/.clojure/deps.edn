@@ -26,4 +26,8 @@
          :exec-args {}}
    :install {:extra-deps {slipset/deps-deploy {:mvn/version "0.1.5"}}
              :exec-fn deps-deploy.deps-deploy/deploy
-             :exec-args {:installer :local}}}}
+             :exec-args {:installer :local}}
+   :carve {:extra-deps {borkdude/carve {:git/url "https://github.com/borkdude/carve"
+                                        :sha "1fd3da8472cf9ee902f9616ca3aeb4812b5c734c"}}
+           :main-opts ["-m" "carve.main"]}}}
+

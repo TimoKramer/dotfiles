@@ -97,7 +97,7 @@ _G.packer_plugins = {
     url = "https://github.com/Olical/conjure"
   },
   ["gitsigns.nvim"] = {
-    config = { "\27LJ\1\0026\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\rgitsigns\frequire\0" },
+    config = { "\27LJ\1\0020\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\21plugins.gitsigns\frequire\0" },
     loaded = true,
     path = "/home/timo/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
@@ -108,10 +108,11 @@ _G.packer_plugins = {
     path = "/home/timo/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/hoob3rt/lualine.nvim"
   },
-  ["lush.nvim"] = {
+  ["material.nvim"] = {
+    config = { "\27LJ\1\2€\1\0\0\2\0\a\0\v4\0\0\0007\0\1\0%\1\2\0>\0\2\0014\0\3\0%\1\4\0>\0\2\0027\0\5\0%\1\6\0>\0\2\1G\0\1\0\flighter\17change_style\23material.functions\frequire\25colorscheme material\bcmd\bvim\0" },
     loaded = true,
-    path = "/home/timo/.local/share/nvim/site/pack/packer/start/lush.nvim",
-    url = "https://github.com/rktjmp/lush.nvim"
+    path = "/home/timo/.local/share/nvim/site/pack/packer/start/material.nvim",
+    url = "https://github.com/marko-cerovac/material.nvim"
   },
   ["nvim-cmp"] = {
     config = { "\27LJ\1\2+\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\16plugins.cmp\frequire\0" },
@@ -177,6 +178,11 @@ _G.packer_plugins = {
     path = "/home/timo/.local/share/nvim/site/pack/packer/start/vim-eunuch",
     url = "https://github.com/tpope/vim-eunuch"
   },
+  ["vim-vinegar"] = {
+    loaded = true,
+    path = "/home/timo/.local/share/nvim/site/pack/packer/start/vim-vinegar",
+    url = "https://github.com/tpope/vim-vinegar"
+  },
   ["which-key.nvim"] = {
     config = { "\27LJ\1\2;\0\0\2\0\3\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0002\1\0\0>\0\2\1G\0\1\0\nsetup\14which-key\frequire\0" },
     loaded = false,
@@ -184,12 +190,6 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/home/timo/.local/share/nvim/site/pack/packer/opt/which-key.nvim",
     url = "https://github.com/folke/which-key.nvim"
-  },
-  ["zenbones.nvim"] = {
-    config = { "\27LJ\1\0020\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\21plugins.zenbones\frequire\0" },
-    loaded = true,
-    path = "/home/timo/.local/share/nvim/site/pack/packer/start/zenbones.nvim",
-    url = "https://github.com/mcchrish/zenbones.nvim"
   }
 }
 
@@ -206,18 +206,18 @@ time([[Config for nvim-lspconfig]], false)
 time([[Config for nvim-cmp]], true)
 try_loadstring("\27LJ\1\2+\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\16plugins.cmp\frequire\0", "config", "nvim-cmp")
 time([[Config for nvim-cmp]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-try_loadstring("\27LJ\1\0026\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
-time([[Config for gitsigns.nvim]], false)
--- Config for: zenbones.nvim
-time([[Config for zenbones.nvim]], true)
-try_loadstring("\27LJ\1\0020\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\21plugins.zenbones\frequire\0", "config", "zenbones.nvim")
-time([[Config for zenbones.nvim]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 try_loadstring("\27LJ\1\0022\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\23plugins.treesitter\frequire\0", "config", "nvim-treesitter")
 time([[Config for nvim-treesitter]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+try_loadstring("\27LJ\1\0020\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\21plugins.gitsigns\frequire\0", "config", "gitsigns.nvim")
+time([[Config for gitsigns.nvim]], false)
+-- Config for: material.nvim
+time([[Config for material.nvim]], true)
+try_loadstring("\27LJ\1\2€\1\0\0\2\0\a\0\v4\0\0\0007\0\1\0%\1\2\0>\0\2\0014\0\3\0%\1\4\0>\0\2\0027\0\5\0%\1\6\0>\0\2\1G\0\1\0\flighter\17change_style\23material.functions\frequire\25colorscheme material\bcmd\bvim\0", "config", "material.nvim")
+time([[Config for material.nvim]], false)
 -- Config for: lualine.nvim
 time([[Config for lualine.nvim]], true)
 try_loadstring("\27LJ\1\2/\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\20plugins.lualine\frequire\0", "config", "lualine.nvim")
