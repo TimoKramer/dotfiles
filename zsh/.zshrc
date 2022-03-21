@@ -14,7 +14,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 #ZSH_THEME="material"
 
 # Setup terminal, and turn on colors
-export TERM=xterm-kitty
+export TERM=xterm-256color
 export CLICOLOR=1
 export EDITOR="nvim"
 export BAT_THEME="Coldark-Cold"

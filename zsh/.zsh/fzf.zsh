@@ -4,5 +4,9 @@
 
 # Key bindings
 # ------------
-source "/usr/share/fzf/key-bindings.zsh"
+source "/usr/share/fzf/shell/key-bindings.zsh"
 
+# Options to fzf command
+export FZF_COMPLETION_OPTS='--border --info=inline'
+
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'

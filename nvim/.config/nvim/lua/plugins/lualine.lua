@@ -1,3 +1,3 @@
 require("lualine").setup {
-	options = { theme = 'material-nvim' },
+	options = { theme = 'auto' },
 }

@@ -7,10 +7,9 @@ end
 return require('packer').startup(function(use)
 
   use {
-    "marko-cerovac/material.nvim",
+    'ishan9299/modus-theme-vim',
     config = function()
-        vim.cmd [[colorscheme material]]
-        require('material.functions').change_style('lighter')
+        require('plugins.colorscheme')
     end,
   }
 
