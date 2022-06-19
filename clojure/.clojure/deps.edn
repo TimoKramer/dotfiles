@@ -4,8 +4,9 @@
                       {:mvn/version "1.1.264"}}
          :exec-fn clj-new/create
          :exec-args {:template "app"}}
-   :repl {:extra-deps {nrepl/nrepl {:mvn/version "0.7.0"}
-                       cider/cider-nrepl {:mvn/version "0.25.2"}}
+   :repl {:extra-deps {nrepl/nrepl {:mvn/version "0.9.0"}
+                       cider/cider-nrepl {:mvn/version "0.28.3"}
+                       org.clojure/tools.deps.alpha {:mvn/version "0.12.1162"}}
           :main-opts ["-m" "nrepl.cmdline"
                       "--middleware" "[cider.nrepl/cider-middleware]"
                       "--interactive"]}
@@ -29,5 +30,11 @@
              :exec-args {:installer :local}}
    :carve {:extra-deps {borkdude/carve {:git/url "https://github.com/borkdude/carve"
                                         :sha "1fd3da8472cf9ee902f9616ca3aeb4812b5c734c"}}
-           :main-opts ["-m" "carve.main"]}}}
-
+           :main-opts ["-m" "carve.main"]}
+   :flowstorm {:extra-deps {jpmonettas/flow-storm-debugger {:mvn/version "0.6.0"}}
+               :main-opts ["-m" "flow-storm-debugger.main"]}
+   :aliases {:test {:extra-paths ["test"]
+                    :extra-deps {io.github.cognitect-labs/test-runner
+                                 {:git/tag "v0.5.0" :git/sha "b3fd0d2"}}
+                    :main-opts ["-m" "cognitect.test-runner"]
+                    :exec-fn cognitect.test-runner.api/test}}}}

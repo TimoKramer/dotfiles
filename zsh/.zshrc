@@ -17,7 +17,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 export TERM=xterm-256color
 export CLICOLOR=1
 export EDITOR="nvim"
-export BAT_THEME="Coldark-Cold"
+export BAT_THEME="Coldark-Dark"
 
 # Autocomplete a slash after ..
 zstyle ':completion:*' special-dirs true

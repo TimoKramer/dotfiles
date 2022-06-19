@@ -13,6 +13,13 @@ return require('packer').startup(function(use)
     end,
   }
 
+  use {
+    'ishan9299/modus-theme-vim',
+    config = function()
+        vim.cmd('colorscheme modus-vivendi')
+    end,
+  }
+
   use 'ntpeters/vim-better-whitespace'
 
   use 'TimoKramer/vim-better-default'
@@ -99,6 +106,10 @@ return require('packer').startup(function(use)
       require"surround".setup {mappings_style = "surround"}
     end
   }
+
+  use 'tpope/vim-dispatch'
+  use 'clojure-vim/vim-jack-in'
+  use 'radenling/vim-dispatch-neovim'
 
   if packer_bootstrap then
     require('packer').sync()
