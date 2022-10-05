@@ -103,30 +103,18 @@ prompt walters
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
 # http://zshwiki.org/home/zle/bindkeys
 bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
 bindkey  "^[[3"   delete-char
 
-# PYTHON
-#export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-#export PATH="${HOME}/Library/Python/3.6/bin:$PATH"
-#export WORKON_HOME=${HOME}/.virtualenvs
-#export PROJECT_HOME=${HOME}/projekte
-#source /usr/local/bin/virtualenvwrapper.sh
-export PATH="$PATH:$HOME/.config/nvim/plugged/vim-iced/bin"
+# PATH
 export PATH="$PATH:$HOME/.pulumi/bin"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$HOME/.local/bin:$PATH"
 
 # GRAALVM
 export GRAALVM_HOME="/usr/lib/jvm/graalvm-ce-java11-20.3.0"
-
-# vim-iced
-export ICED_REPL_CLOJURE_CLI_CMD=clojure
 
 # man
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
@@ -165,9 +153,6 @@ alias cljserve='clojure -Sdeps "{:deps {nasus {:mvn/version \"LATEST\"}}}" -m ht
 alias vimf='nvim $(fzf)'
 alias stow='stow --verbose --target=${HOME}'
 alias top='btm'
-
-# add Pulumi to the PATH
-export PATH=$PATH:$HOME/.pulumi/bin
 
 # PROMPT
 brname () {

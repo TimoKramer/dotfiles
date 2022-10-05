@@ -4,7 +4,7 @@
 
 # Key bindings
 # ------------
-source "/usr/share/fzf/shell/key-bindings.zsh"
+source "/usr/share/fzf/key-bindings.zsh"
 
 # Options to fzf command
 export FZF_COMPLETION_OPTS='--border --info=inline'
