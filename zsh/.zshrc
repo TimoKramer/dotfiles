@@ -165,3 +165,5 @@ brname () {
 }
 
 #export PROMPT="%B%(?..[%?] )%b%n $(brname)> "
+
+export GPG_TTY=$TTY

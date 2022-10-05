@@ -1,10 +1,14 @@
 [user]
 	email = fw-git@timokramer.de
 	name = Timo Kramer
-	signingkey = 0B2A77E1D12CFC45
+	signingkey = 8D18DC61069781F6
 [pull]
 	rebase = true
 [core]
 	excludesfile = ~/.gitignore
 [alias]
 	s = status
+[gpg]
+	program = gpg
+[commit]
+	gpgsign = true
