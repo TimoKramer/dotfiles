@@ -7,3 +7,4 @@ vim.opt.listchars = {
   space = '␣'
 }
 vim.wo.cursorcolumn = true
+vim.opt.wildcharm = ('\t'):byte()

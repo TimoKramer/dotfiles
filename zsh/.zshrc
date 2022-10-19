@@ -17,7 +17,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 export TERM=xterm-256color
 export CLICOLOR=1
 export EDITOR="nvim"
-export BAT_THEME="Coldark-Dark"
+export BAT_THEME="Coldark-Cold"
 
 # Autocomplete a slash after ..
 zstyle ':completion:*' special-dirs true
@@ -134,8 +134,9 @@ alias ll="exa --all --reverse --sort=modified --long --group-directories-first -
 alias cat='bat'
 alias grep='rg'
 alias gits='git status'
+alias gitc='git commit -S'
 alias gitd='git diff'
-alias gitl='git log --graph --oneline'
+alias gitl='git log --graph --oneline --pretty="format:%h %G? %aN  %s"'
 alias gitg='git grep'
 alias gitf='git fetch --all'
 alias vim='nvim'
