@@ -5,6 +5,7 @@
 	rebase = true
 [core]
 	excludesfile = ~/.gitignore
+	autocrlf = true
 [alias]
 	s = status
 [gpg]
