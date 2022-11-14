@@ -6,12 +6,12 @@ end
 
 return require('packer').startup(function(use)
 
-  use {
-    'ishan9299/modus-theme-vim',
-    config = function()
-        require('plugins.colorscheme')
-    end,
-  }
+--  use {
+--    'ishan9299/modus-theme-vim',
+--    config = function()
+--        require('plugins.colorscheme')
+--    end,
+--  }
 
   use {
     'ishan9299/modus-theme-vim',
@@ -76,6 +76,26 @@ return require('packer').startup(function(use)
     'nvim-telescope/telescope.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
     cmd = 'Telescope',
+    config = function()
+      require("telescope").setup({
+        defaults = {
+          layout_config = {
+            prompt_position = "top",
+          },
+        },
+        pickers = {
+          find_files = {
+            hidden = true,
+            file_ignore_patterns = {
+              ".git/",
+              ".node_modules/",
+              ".mypy_cache/",
+              "__pycache__/",
+            },
+          },
+        },
+      })
+    end,
   }
 
   use {

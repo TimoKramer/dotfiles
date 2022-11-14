@@ -6,5 +6,8 @@ vim.opt.listchars = {
   precedes = '<',
   space = '␣'
 }
-vim.wo.cursorcolumn = true
 vim.opt.wildcharm = ('\t'):byte()
+
+--vim.wo.cursorcolumn = true
+--vim.api.nvim_set_hl(0, 'CursorLine', { underline = false, ctermbg = 254 })
+--vim.api.nvim_set_hl(0, 'CursorColumn', { ctermbg = 254 })
