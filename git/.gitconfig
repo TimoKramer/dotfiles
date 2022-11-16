@@ -1,14 +1,19 @@
 [user]
-	name = Timo Kramer
-	signingkey = 8D18DC61069781F6
+    name = Timo Kramer
+    signingkey = 8D18DC61069781F6
 [pull]
-	rebase = true
+    rebase = true
 [core]
-	excludesfile = ~/.gitignore
-	autocrlf = true
+    excludesfile = ~/.gitignore
+    eol = lf
+    autocrlf = false
 [alias]
-	s = status
+    s = status
+    l = "--graph --oneline --pretty=\"format:%h %G? %aN  %s\"'"
+    f = "fetch --all"
+    d = diff
+    c = "commit -S"
 [gpg]
-	program = gpg
+    program = gpg
 [commit]
-	gpgsign = true
+    gpgsign = true
