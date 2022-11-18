@@ -111,6 +111,7 @@ bindkey  "^[[3"   delete-char
 # PATH
 export PATH="$PATH:$HOME/.pulumi/bin"
 export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$HOME/.local/bin:$PATH"
 
 # GRAALVM
@@ -132,7 +133,7 @@ function mkcd() { mkdir -p "$@" && cd "$_"; }
 alias ls='ls --color'
 alias ll="exa --all --reverse --sort=modified --long --group-directories-first --header --bytes"
 alias cat='bat'
-alias grep='rg'
+alias grep='rg --hidden'
 alias gits='git status'
 alias gitc='git commit -S'
 alias gitd='git diff'

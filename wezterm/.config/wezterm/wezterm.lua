@@ -41,10 +41,16 @@ local keys = is_windows and {
     },
 } or {}
 
+local default_prog = is_windows and {
+    'wsl', '--cd', '~'
+} or {}
+
 return {
     color_scheme_dirs = { color_scheme_dirs },
     color_scheme = 'modus-operandi',
     font_size = 9.0,
     hide_tab_bar_if_only_one_tab = true,
     keys = keys,
+    harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
+    default_prog = default_prog,
 }
