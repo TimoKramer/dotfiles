@@ -6,12 +6,12 @@ end
 
 return require('packer').startup(function(use)
 
---  use {
---    'ishan9299/modus-theme-vim',
---    config = function()
---        require('plugins.colorscheme')
---    end,
---  }
+  use {
+    'ishan9299/modus-theme-vim',
+    config = function()
+        require('plugins.colorscheme')
+    end,
+  }
 
   use {
     'ishan9299/modus-theme-vim',
@@ -114,7 +114,7 @@ return require('packer').startup(function(use)
   use {
     'eraserhd/parinfer-rust',
     ft = {'clojure'},
-    run = 'cargo build --release'
+    run = 'cargo build --release && cargo install'
   }
 
   use 'tpope/vim-eunuch'

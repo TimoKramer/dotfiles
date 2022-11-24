@@ -99,7 +99,7 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$HOME/.local/bin:$PATH"
 
 # GRAALVM
-export GRAALVM_HOME="/usr/lib/jvm/graalvm-ce-java11-20.3.0"
+export GRAALVM_HOME="/usr/lib/jvm/java-17-graalvm"
 
 # man
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
