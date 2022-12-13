@@ -96,7 +96,6 @@ bindkey  "^[[3"   delete-char
 export PATH="$PATH:$HOME/.pulumi/bin"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
-export PATH="$HOME/.local/bin:$PATH"
 
 # GRAALVM
 export GRAALVM_HOME="/usr/lib/jvm/java-17-graalvm"
@@ -139,6 +138,7 @@ alias cljserve='clojure -Sdeps "{:deps {nasus {:mvn/version \"LATEST\"}}}" -m ht
 alias vimf='nvim $(fzf)'
 alias stow='stow --verbose --target=${HOME}'
 alias top='btm'
+alias find='fd --hidden --no-ignore'
 
 # PROMPT
 brname () {

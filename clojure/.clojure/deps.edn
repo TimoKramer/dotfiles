@@ -1,35 +1,35 @@
 {
  :aliases
   {:new {:extra-deps {com.github.seancorfield/clj-new
-                      {:mvn/version "1.1.264"}}
+                      {:mvn/version "1.2.399"}}
          :exec-fn clj-new/create
          :exec-args {:template "app"}}
-   :repl {:extra-deps {nrepl/nrepl {:mvn/version "0.9.0"}
-                       cider/cider-nrepl {:mvn/version "0.28.3"}
-                       org.clojure/tools.deps.alpha {:mvn/version "0.12.1162"}}
+   :repl {:extra-deps {nrepl/nrepl {:mvn/version "1.1.0-alpha1"}
+                       cider/cider-nrepl {:mvn/version "0.28.7"}
+                       org.clojure/tools.deps.alpha {:mvn/version "0.15.1254"}}
           :main-opts ["-m" "nrepl.cmdline"
                       "--middleware" "[cider.nrepl/cider-middleware]"
                       "--interactive"]}
-   :reveal {:extra-deps {nrepl/nrepl {:mvn/version "RELEASE"}
-                         vlaaad/reveal {:mvn/version "RELEASE"}}
+   :reveal {:extra-deps {nrepl/nrepl {:mvn/version "1.1.0-alpha1"}
+                         vlaaad/reveal {:mvn/version "1.3.276"}}
             :main-opts ["-m" "nrepl.cmdline"
                         "--middleware" "[vlaaad.reveal.nrepl/middleware]"
                         "--interactive"]
             :jvm-opts ["-Dvlaaad.reveal.prefs={:theme,:light,:font-family,\"https://ff.static.1001fonts.net/u/b/ubuntu.mono.ttf\",:font-size,18}"]}
-   :outdated {:extra-deps {antq/antq {:mvn/version "RELEASE"}}
+   :outdated {:extra-deps {antq/antq {:mvn/version "2.2.962"}}
               :main-opts ["-m" "antq.core"]}
-   :nvd {:extra-deps {lein-nvd/lein-nvd {:mvn/version "1.4.1"}}
+   :nvd {:extra-deps {lein-nvd/lein-nvd {:mvn/version "2.0.0"}}
          :main-opts ["-m" "nvd.task.check"]}
-   :fformat {:extra-deps {cljfmt/cljfmt {:mvn/version "0.7.0"}}
+   :fformat {:extra-deps {cljfmt/cljfmt {:mvn/version "0.9.0"}}
              :main-opts ["-m" "cljfmt.main" "fix"]}
    :jar {:replace-deps {com.github.seancorfield/depstar {:mvn/version "2.0.216"}}
          :exec-fn hf.depstar/jar
          :exec-args {}}
-   :install {:extra-deps {slipset/deps-deploy {:mvn/version "0.1.5"}}
+   :install {:extra-deps {slipset/deps-deploy {:mvn/version "0.2.0"}}
              :exec-fn deps-deploy.deps-deploy/deploy
              :exec-args {:installer :local}}
    :carve {:extra-deps {borkdude/carve {:git/url "https://github.com/borkdude/carve"
-                                        :sha "1fd3da8472cf9ee902f9616ca3aeb4812b5c734c"}}
+                                        :git/sha "9c11e4727bff22386899f048d1d50b7978d3ac9e"}}
            :main-opts ["-m" "carve.main"]}
    :flowstorm {:extra-deps {jpmonettas/flow-storm-debugger {:mvn/version "0.6.0"}}
                :main-opts ["-m" "flow-storm-debugger.main"]}
