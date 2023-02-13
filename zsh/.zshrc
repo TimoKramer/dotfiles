@@ -139,6 +139,7 @@ alias vimf='nvim $(fzf)'
 alias stow='stow --verbose --target=${HOME}'
 alias top='btm'
 alias find='fd --hidden --no-ignore'
+alias jarcontent="jar tf"
 
 # PROMPT
 brname () {
