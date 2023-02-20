@@ -13,16 +13,7 @@ return require('packer').startup(function(use)
     end,
   }
 
-  use {
-    'ishan9299/modus-theme-vim',
-    config = function()
-        vim.cmd('colorscheme modus-vivendi')
-    end,
-  }
-
   use 'ntpeters/vim-better-whitespace'
-
-  use 'TimoKramer/vim-better-default'
 
   use {
     'hrsh7th/nvim-cmp',

@@ -1,9 +1,10 @@
 local map = vim.api.nvim_set_keymap
+local options = { noremap=true, silent=true }
 
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 
-map('n', '<Leader>ff', '<Cmd>:Telescope find_files<CR>', { noremap=true, silent=true })
+map('n', '<Leader>ff', '<Cmd>:Telescope find_files<CR>', options)
 map('n', '<Leader>fg', '<Cmd>:Telescope live_grep<CR>', { noremap=true, silent=true })
 map('n', '<Leader>fb', '<Cmd>:Telescope buffers<CR>', { noremap=true, silent=true })
 map('n', '<Leader>fh', '<Cmd>:Telescope help_tags<CR>', { noremap=true, silent=true })
@@ -17,7 +18,8 @@ map('n', '<Leader>je', ':%!jet --from edn --to edn --pretty', { noremap=true, si
 
 -- Terminal
 
-map('t', 'jj', [[<C-\><C-n>]], { noremap=true, silent=true })
+map('i', 'jj', "<Esc>", options)
+map('t', 'jj', [[<C-\><C-n>]], options)
 
 --
 -- function _G.lsp_formatexr()
