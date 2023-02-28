@@ -18,3 +18,6 @@ vim.api.nvim_create_autocmd("BufNewFile", {
         vim.diagnostic.disable(0)
     end,
 })
+
+vim.opt.relativenumber = true
+vim.opt.number = true
