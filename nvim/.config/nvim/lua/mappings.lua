@@ -21,6 +21,10 @@ map('n', '<Leader>je', ':%!jet --from edn --to edn --pretty', { noremap=true, si
 map('i', 'jj', "<Esc>", options)
 map('t', 'jj', [[<C-\><C-n>]], options)
 
+-- Command
+map('c', '<C-F>', '<Right>', options)
+map('c', '<C-B>', '<Left>', options)
+
 --
 -- function _G.lsp_formatexr()
 --   vim.lsp.buf.range_formatting({}, { vim.v.lnum, 0 }, { vim.v.lnum + vim.v.count, 0 })

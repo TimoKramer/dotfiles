@@ -1,3 +1,4 @@
 vim.o.termguicolors = true
 vim.cmd [[colorscheme modus-operandi]]
-vim.cmd [[highlight CursorColumn ctermbg=243 guifg=none guibg=#f2eff3]]
+vim.g.modus_yellow_comments = true
+vim.g.modus_green_strings = true
