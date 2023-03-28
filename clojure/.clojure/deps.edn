@@ -5,7 +5,8 @@
          :exec-fn clj-new/create
          :exec-args {:template "app"}}
    :repl {:extra-deps {nrepl/nrepl {:mvn/version "1.1.0-alpha1"}
-                       cider/cider-nrepl {:mvn/version "0.30.0"}}
+                       cider/cider-nrepl {:mvn/version "0.30.0"}
+                       org.slf4j/slf4j-simple {:mvn/version "2.0.7"}}
           :main-opts ["-m" "nrepl.cmdline"
                       "--middleware" "[cider.nrepl/cider-middleware]"]}
    :reveal {:extra-deps {nrepl/nrepl {:mvn/version "1.0.0"}
@@ -13,12 +14,17 @@
             :main-opts ["-m" "nrepl.cmdline"
                         "--middleware" "[vlaaad.reveal.nrepl/middleware]"]
             :jvm-opts ["-Dvlaaad.reveal.prefs={:theme,:light,:font-family,\"https://ff.static.1001fonts.net/u/b/ubuntu.mono.ttf\",:font-size,18}"]}
-   :portal {:extra-deps {djblue/portal {:mvn/version "RELEASE"}}}
-   ;; - see https://github.com/hugoduncan/criterium/
-   ;; - (require '[criterium.core :refer [bench]])
-   ;; - (bench (your-expression))
-   :bench {:extra-deps {criterium/criterium {:mvn/version "RELEASE"}}}
-   :outdated {:extra-deps {antq/antq {:mvn/version "2.2.992"}}
+
+   :repl/portal {:extra-deps {nrepl/nrepl {:mvn/version "1.0.0"}
+                              cider/cider-nrepl {:mvn/version "0.30.0"}
+                              djblue/portal {:mvn/version "0.36.0"}
+                              com.gfredericks/user.clj {:mvn/version "0.1.0"}}
+                 :main-opts ["-m" "nrepl.cmdline"
+                             "--middleware" "[cider.nrepl/cider-middleware,portal.nrepl/wrap-portal]"]}
+
+   :bench {:extra-deps {criterium/criterium {:mvn/version "0.4.6"}}}
+   :outdated {:extra-deps {antq/antq {:mvn/version "2.2.1011"}
+                           org.slf4j/slf4j-simple {:mvn/version "2.0.7"}}
               :main-opts ["-m" "antq.core"]}
    :nvd {:extra-deps {lein-nvd/lein-nvd {:mvn/version "2.0.0"}}
          :main-opts ["-m" "nvd.task.check"]}
@@ -31,13 +37,13 @@
              :exec-fn deps-deploy.deps-deploy/deploy
              :exec-args {:installer :local}}
    :carve {:extra-deps {borkdude/carve {:git/url "https://github.com/borkdude/carve"
-                                        :git/sha "f45dc3cb35a8b9c6c11d4681f8c673fa347d54be"}}
+                                        :git/sha "14a3a5db4b372e33d20763a8d1344bddae72c735"}}
            :main-opts ["-m" "carve.main"]}
    :flowstorm {:extra-deps {jpmonettas/flow-storm-debugger {:mvn/version "0.6.0"}}
                :main-opts ["-m" "flow-storm-debugger.main"]}
    :hotload {:extra-deps {org.clojure/tools.deps.alpha {:git/url "https://github.com/clojure/tools.deps.alpha"
                                                         :git/sha     "e4fb92eef724fa39e29b39cc2b1a850567d490dd"}
-                          org.slf4j/slf4j-nop {:mvn/version "2.0.5"}}
+                          org.slf4j/slf4j-nop {:mvn/version "2.0.6"}}
              :main-opts ["-e" "(->>(Thread/currentThread)(.getContextClassLoader)(clojure.lang.DynamicClassLoader.)(.setContextClassLoader,(Thread/currentThread)))"]}
    :user {:extra-deps {com.gfredericks/user.clj {:mvn/version "RELEASE"}}}
    :clojure-lsp {:extra-deps {com.github.clojure-lsp/clojure-lsp {:mvn/version "RELEASE"}}}

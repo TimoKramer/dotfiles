@@ -9,6 +9,7 @@ vim.opt.listchars = {
 vim.opt.wildcharm = ('\t'):byte()
 
 vim.wo.cursorcolumn = true
+vim.wo.cursorline = true
 vim.api.nvim_set_hl(0, 'CursorLine', { underline = false, ctermbg = 254 })
 vim.api.nvim_set_hl(0, 'CursorColumn', { ctermbg = 254 })
 

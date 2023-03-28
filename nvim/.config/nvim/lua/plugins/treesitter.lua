@@ -8,6 +8,7 @@ require("nvim-treesitter.configs").setup {
       "python",
       "bash",
       "json",
+      "yaml",
   },
   incremental_selection = {
     enable  = true,
