@@ -1,6 +1,7 @@
 -- https://github.com/tjdevries/config_manager/blob/master/xdg_config/nvim/after/plugin/completion.lua
 -- https://github.com/lispyclouds/dotfiles/blob/main/nvim/lua/completion.lua
 local cmp = require'cmp'
+
 cmp.setup({
   window = {
     completion = cmp.config.window.bordered(),
@@ -42,13 +43,15 @@ cmp.setup({
       end,
     },
   },
-  sources = {
+
+  sources = cmp.config.sources({
     { name = "nvim_lua" },
-    { name = "zsh" },
     { name = "nvim_lsp" },
+  }, {
     { name = "path" },
-    { name = "buffer" },
-  },
+    { name = "buffer", keyword_length = 5 },
+  }),
+
   sorting = {
     comparators = {
       cmp.config.compare.offset,
@@ -73,19 +76,5 @@ cmp.setup({
       cmp.config.compare.order,
     },
   },
-  experimental = {
-    native_menu = false,
-    ghost_text = not is_wsl,
-  },
-  enabled = true;
-  autocomplete = true;
-  debug = false;
-  min_length = 1;
-  preselect = 'enable';
-  throttle_time = 80;
-  source_timeout = 200;
-  incomplete_delay = 400;
-  max_abbr_width = 100;
-  max_kind_width = 100;
-  max_menu_width = 100;
+
 })

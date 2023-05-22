@@ -22,3 +22,11 @@ vim.api.nvim_create_autocmd("BufNewFile", {
 
 vim.opt.relativenumber = true
 vim.opt.number = true
+vim.opt.scrolloff = 3
+vim.opt.scrolljump = 5
+vim.opt.expandtab = true
+vim.opt.swapfile = false
+vim.opt.smarttab = true
+vim.opt.smartindent = true
+vim.opt.undodir = vim.loop.os_homedir() .. "/.vim/undodir"
+vim.opt.undofile = true

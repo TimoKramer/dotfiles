@@ -9,7 +9,7 @@ return require('packer').startup(function(use)
   use {
     'ishan9299/modus-theme-vim',
     config = function()
-        require('plugins.colorscheme')
+        require('colorscheme')
     end,
   }
 
@@ -24,7 +24,7 @@ return require('packer').startup(function(use)
       'hrsh7th/cmp-path',
     },
     config = function()
-        require('plugins.cmp')
+        require('cmp')
     end,
   }
 
@@ -32,7 +32,7 @@ return require('packer').startup(function(use)
     'neovim/nvim-lspconfig',
     event = buf_enter,
     config = function()
-        require('plugins.lspconfig')
+        require('lspconfig')
     end,
   }
 
@@ -51,7 +51,7 @@ return require('packer').startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
     config = function()
-      require('plugins.treesitter')
+      require('treesitter')
     end,
   }
 
@@ -59,7 +59,7 @@ return require('packer').startup(function(use)
     'lewis6991/gitsigns.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
     config = function()
-        require('plugins.gitsigns')
+        require('gitsigns')
     end,
   }
 
@@ -68,24 +68,7 @@ return require('packer').startup(function(use)
     requires = { 'nvim-lua/plenary.nvim' },
     cmd = 'Telescope',
     config = function()
-      require("telescope").setup({
-        defaults = {
-          layout_config = {
-            prompt_position = "top",
-          },
-        },
-        pickers = {
-          find_files = {
-            hidden = true,
-            file_ignore_patterns = {
-              ".git/",
-              ".node_modules/",
-              ".mypy_cache/",
-              "__pycache__/",
-            },
-          },
-        },
-      })
+      require('telescope')
     end,
   }
 
@@ -93,18 +76,22 @@ return require('packer').startup(function(use)
     'hoob3rt/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true},
     config = function()
-        require("plugins.lualine")
+        require('lualine')
     end,
   }
 
   use {
     'Olical/conjure',
-    ft = {'clojure'}
+    filetypes = {'clojure'},
+    config = function()
+      log = {hud = {ignore_low_priority = false}}
+      vim.g['conjure#client#clojure#nrepl#test#runner'] = "kaocha"
+    end,
   }
 
   use {
     'eraserhd/parinfer-rust',
-    ft = {'clojure'},
+    filetypes = {'clojure'},
     run = 'cargo build --release && cargo install'
   }
 
@@ -114,13 +101,9 @@ return require('packer').startup(function(use)
   use {
     "ur4ltz/surround.nvim",
     config = function()
-      require"surround".setup {mappings_style = "surround"}
+      require('surround').setup {mappings_style = "surround"}
     end
   }
-
-  use 'tpope/vim-dispatch'
-  use 'clojure-vim/vim-jack-in'
-  use 'radenling/vim-dispatch-neovim'
 
   if packer_bootstrap then
     require('packer').sync()

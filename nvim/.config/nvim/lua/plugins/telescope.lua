@@ -12,13 +12,14 @@ table.insert(vimgrep_arguments, "!.git/*")
 
 telescope.setup({
 	defaults = {
-		-- `hidden = true` is not supported in text grep commands.
 		vimgrep_arguments = vimgrep_arguments,
+                layout_config = { prompt_position = "top" }
 	},
 	pickers = {
 		find_files = {
-			-- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
-			find_command = { "rg", "--files", "--hidden", "--glob", "!.git/*" },
+			hidden = true,
+                        file_ignore_patterns = { ".git/", ".node_modules/", ".mypy_cache/", "__pycache__/" },
+			find_command = { "rg", "--files", "--hidden", "--glob", "!.git/*" }
 		},
 	},
 })
