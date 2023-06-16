@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-set -o errexit
-set -o pipefail
-set -o nounset
-
-CONF=$(wg show | awk 'NR==1{print $2}')
-
-wg-quick down ${CONF}

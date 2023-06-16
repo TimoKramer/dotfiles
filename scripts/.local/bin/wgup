@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-set -o errexit
-set -o pipefail
-set -o nounset
-
-CONF=$(ls /etc/wireguard | sort -R | tail -1)
-wg-quick up /etc/wireguard/${CONF}
