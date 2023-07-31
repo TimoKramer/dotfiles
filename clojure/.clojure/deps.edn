@@ -22,6 +22,7 @@
                  :main-opts ["-m" "nrepl.cmdline"
                              "--middleware" "[cider.nrepl/cider-middleware,portal.nrepl/wrap-portal]"]}
 
+   :beta {:extra-deps {org.clojure/clojure {:mvn/version "1.12.0-alpha3"}}}
    :bench {:extra-deps {criterium/criterium {:mvn/version "0.4.6"}}}
    :outdated {:extra-deps {antq/antq {:mvn/version "2.4.1070"}
                            org.slf4j/slf4j-simple {:mvn/version "2.0.7"}}
@@ -30,6 +31,8 @@
          :main-opts ["-m" "nvd.task.check"]}
    :fformat {:extra-deps {cljfmt/cljfmt {:mvn/version "0.9.2"}}
              :main-opts ["-m" "cljfmt.main" "fix"]}
+   :format {:extra-deps {cljfmt/cljfmt {:mvn/version "0.9.2"}}
+            :main-opts ["-m" "cljfmt.main" "check"]}
    :jar {:replace-deps {com.github.seancorfield/depstar {:mvn/version "2.0.216"}}
          :exec-fn hf.depstar/jar
          :exec-args {}}
@@ -47,4 +50,7 @@
              :main-opts ["-e" "(->>(Thread/currentThread)(.getContextClassLoader)(clojure.lang.DynamicClassLoader.)(.setContextClassLoader,(Thread/currentThread)))"]}
    :user {:extra-deps {com.gfredericks/user.clj {:mvn/version "0.1.0"}}}
    :clojure-lsp {:extra-deps {com.github.clojure-lsp/clojure-lsp {:mvn/version "2023.05.04-19.38.01"}}}
-   :zprint {:extra-deps {zprint/zprint {:mvn/version "1.2.7"}}}}}
+   :zprint {:extra-deps {zprint/zprint {:mvn/version "1.2.7"}}}
+   :splint {:extra-deps {io.github.noahtheduke/splint {:mvn/version "1.10.0"}
+                         org.clojure/clojure {:mvn/version "1.11.1"}}
+            :main-opts ["-m" "noahtheduke.splint"]}}}
