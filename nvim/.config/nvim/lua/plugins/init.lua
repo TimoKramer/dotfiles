@@ -90,11 +90,9 @@ return require('packer').startup(function(use)
   }
 
   use {
-    'gpanders/nvim-parinfer',
+    'eraserhd/parinfer-rust',
     filetypes = {'clojure'},
-    config = function()
-      vim.g.parinfer_force_balance = true
-    end,
+    run = 'cargo build --release && cargo install'
   }
 
   use 'tpope/vim-eunuch'

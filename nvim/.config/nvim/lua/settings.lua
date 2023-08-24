@@ -6,7 +6,6 @@ vim.opt.listchars = {
   precedes = '<',
   space = '␣'
 }
-vim.opt.wildcharm = ('\t'):byte()
 
 vim.wo.cursorcolumn = true
 vim.wo.cursorline = true
@@ -20,13 +19,15 @@ vim.api.nvim_create_autocmd("BufNewFile", {
     end,
 })
 
-vim.opt.relativenumber = true
-vim.opt.number = true
-vim.opt.scrolloff = 3
-vim.opt.scrolljump = 5
 vim.opt.expandtab = true
-vim.opt.swapfile = false
-vim.opt.smarttab = true
+vim.opt.jumpoptions = "view"
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.scrolljump = 5
+vim.opt.scrolloff = 3
+vim.opt.signcolumn = "yes:1"
 vim.opt.smartindent = true
+vim.opt.smarttab = true
 vim.opt.undodir = vim.loop.os_homedir() .. "/.vim/undodir"
 vim.opt.undofile = true
+vim.opt.wildcharm = ('\t'):byte()
