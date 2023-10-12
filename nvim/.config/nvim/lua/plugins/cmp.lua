@@ -1,5 +1,3 @@
--- https://github.com/tjdevries/config_manager/blob/master/xdg_config/nvim/after/plugin/completion.lua
--- https://github.com/lispyclouds/dotfiles/blob/main/nvim/lua/completion.lua
 local cmp = require'cmp'
 
 cmp.setup({

@@ -113,7 +113,7 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 #mkdir and cd
 function mkcd() { mkdir -p "$@" && cd "$_"; }
 alias ls='ls --color'
-alias ll="exa --all --reverse --sort=modified --long --group-directories-first --header --bytes"
+alias ll="eza --all --reverse --sort=modified --long --group-directories-first --header --bytes"
 alias cat='bat'
 alias grep='rg --hidden'
 alias gits='git status'

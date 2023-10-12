@@ -38,16 +38,24 @@ local on_attach = function(client, bufnr)
 
 end
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = { 'pyright',
-                  'clojure_lsp',
-	          'yamlls' }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
+nvim_lsp.clojure_lsp.setup {
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  }
+}
+
+nvim_lsp.pylsp.setup {
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  }
+  settings = {
+    pylsp = {
+      plugins = {
+        autopep8.enabled = false,
+        yapf.enabled = true,
+      }
     }
   }
-end
+}
