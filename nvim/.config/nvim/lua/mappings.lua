@@ -23,3 +23,6 @@ map('t', 'jj', [[<C-\><C-n>]], options)
 -- Command
 map('c', '<C-F>', '<Right>', options)
 map('c', '<C-B>', '<Left>', options)
+
+vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])

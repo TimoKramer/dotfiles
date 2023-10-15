@@ -49,13 +49,13 @@ nvim_lsp.pylsp.setup {
   on_attach = on_attach,
   flags = {
     debounce_text_changes = 150,
-  }
+  },
   settings = {
     pylsp = {
       plugins = {
-        autopep8.enabled = false,
-        yapf.enabled = true,
-      }
-    }
-  }
+        autopep8 = { enabled = false },
+        yapf = { enabled = true },
+      },
+    },
+  },
 }
