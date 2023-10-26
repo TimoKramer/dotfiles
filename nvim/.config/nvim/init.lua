@@ -194,6 +194,7 @@ require('lazy').setup({
     opts = {
       -- indent = { char = "▏" },
       indent = { char = "┊" },
+      whitespace = { highlight = { "Whitespace", "NonText" } },
     },
   },
 
