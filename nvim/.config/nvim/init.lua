@@ -192,9 +192,7 @@ require('lazy').setup({
     -- See `:help ibl`
     main = 'ibl',
     opts = {
-      -- indent = { char = "▏" },
       indent = { char = "┊" },
-      whitespace = { highlight = { "Whitespace", "NonText" } },
     },
   },
 
@@ -296,7 +294,7 @@ vim.o.termguicolors = true
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', '<Leader><CR>', ':noh<CR>', { silent = true })
-vim.keymap.set('n', '<Leader>w', ':write<CR>', { silent = true})
+vim.keymap.set('n', '<Leader>ww', ':write<CR>', { silent = true})
 vim.keymap.set('i', 'jj', '<Esc>', { silent = true})
 vim.keymap.set('t', 'jj', '[[<C-\\><C-n>]]', { silent = true})
 
@@ -555,10 +553,15 @@ cmp.setup {
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete {},
-    ['<CR>'] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    },
+    ['<C-e>'] = cmp.mapping.close(),
+    ['<C-y>'] = cmp.mapping(
+      cmp.mapping.confirm {
+        behavior = cmp.ConfirmBehavior.Insert,
+        select = true,
+      },
+      { "i", "c" }
+    ),
+
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -584,5 +587,6 @@ cmp.setup {
   },
 }
 
+vim.lsp.set_log_level("info")
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

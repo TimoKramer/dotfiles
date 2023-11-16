@@ -12,6 +12,11 @@ local color_scheme_dirs = join(home, ".config", "wezterm", "colors")
 
 local keys = is_windows and {
     {
+        key = 'C',
+        mods = 'CTRL',
+        action = wt.action.CopyTo 'ClipboardAndPrimarySelection',
+    },
+    {
         key = 'T',
         mods = 'CTRL|SHIFT',
         action = wt.action.SpawnCommandInNewTab {

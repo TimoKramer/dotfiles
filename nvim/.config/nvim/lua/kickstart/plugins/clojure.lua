@@ -33,7 +33,7 @@ return {
     end,
     init = function()
       vim.g['conjure#log#hud#ignore_low_priority'] = false
-      vim.g['conjure#client#clojure#nrepl#test#runner'] = "kaocha"
+      vim.g['conjure#client#clojure#nrepl#connection#auto_repl#enabled'] = false
     end,
   },
   {
