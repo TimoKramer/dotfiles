@@ -1,6 +1,8 @@
 [user]
     name = Timo Kramer
     signingkey = 8D18DC61069781F6
+[push]
+    autoSetupRemote = true
 [pull]
     rebase = true
 [core]
