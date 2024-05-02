@@ -11,14 +11,14 @@
 -- }
 
 return {
-  "miikanissi/modus-themes.nvim",
+  'miikanissi/modus-themes.nvim',
   priority = 1000,
-  dim_inactive = "non-current",
+  dim_inactive = 'non-current',
   styles = {
-    comments = { sp = "green" },
+    comments = { sp = 'green' },
   },
-  config = function ()
-    vim.cmd([[colorscheme modus_operandi]])
+  config = function()
+    vim.cmd [[colorscheme modus_operandi]]
   end,
 }
 
