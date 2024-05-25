@@ -53,7 +53,7 @@ local default_prog = is_windows and {
 return {
     color_scheme_dirs = { color_scheme_dirs },
     color_scheme = 'modus-operandi',
-    font = wt.font 'Fira Code',
+    font = wt.font_with_fallback { 'Fira Code', 'JetBrains Mono' },
     font_size = 9.0,
     hide_tab_bar_if_only_one_tab = true,
     keys = keys,
