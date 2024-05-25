@@ -3,8 +3,8 @@ local wt = require 'wezterm';
 local is_windows = wt.target_triple:match("windows") ~= nil
 
 local function join(...)
-  local sep = is_windows and [[\]] or "/"
-  return table.concat({ ... }, sep)
+    local sep = is_windows and [[\]] or "/"
+    return table.concat({ ... }, sep)
 end
 
 local home = wt.home_dir
@@ -53,6 +53,7 @@ local default_prog = is_windows and {
 return {
     color_scheme_dirs = { color_scheme_dirs },
     color_scheme = 'modus-operandi',
+    font = wt.font 'Fira Code',
     font_size = 9.0,
     hide_tab_bar_if_only_one_tab = true,
     keys = keys,
