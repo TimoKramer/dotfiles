@@ -163,6 +163,9 @@ vim.keymap.set('n', '<Leader>ww', ':write<CR>', { desc = 'write file' })
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Leader><CR>', '<cmd>nohlsearch<CR>')
 
+-- Set highlight of trailing whitespace
+vim.cmd(string.format([[match %s /\s\+$/]], 'DiffDelete'))
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
@@ -363,6 +366,10 @@ require('lazy').setup({
         defaults = {
           mappings = {
             i = { ['<c-enter>'] = 'to_fuzzy_refine', ['<C-u>'] = false, ['<C-d>'] = false },
+          },
+          path_display = {
+            'truncate',
+            'filename_first',
           },
         },
         -- pickers = {}

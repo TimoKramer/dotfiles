@@ -124,6 +124,7 @@ alias gitl='git log --graph --oneline --pretty="format:%h %G? %aN  %s"'
 alias gitg='git grep'
 alias gitf='git fetch --all'
 alias gita='git add -p'
+alias gitp='git push'
 alias tmux='tmux -2'
 alias pacupdate='sudo pacman -Syu'
 alias aurupdate="yay -Sua --devel --timeupdate"
