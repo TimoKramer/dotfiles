@@ -19,6 +19,8 @@ return {
   },
   config = function()
     vim.cmd [[colorscheme modus_operandi]]
+    vim.cmd [[set cursorcolumn]]
+    vim.cmd [[highlight CursorColumn guibg=#d0d6ec]]
   end,
 }
 

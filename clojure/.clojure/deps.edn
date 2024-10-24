@@ -28,8 +28,8 @@
                                         :git/sha "e02b65f9de679450176a3fa26c89ffd5600d7eb8"}}
            :main-opts ["-m" "carve.main"]}
    :flowstorm {:classpath-overrides {org.clojure/clojure nil} ;; for disabling the official compiler
-               :extra-deps {com.github.jpmonettas/clojure {:mvn/version "1.11.1-11"}
-                            com.github.jpmonettas/flow-storm-dbg {:mvn/version "3.7.5"}}
+               :extra-deps {com.github.flow-storm/clojure {:mvn/version "1.11.4"}
+                            com.github.flow-storm/flow-storm-dbg {:mvn/version "3.17.3"}}
                :jvm-opts ["-Dclojure.storm.instrumentEnable=true"
                           "-Dclojure.storm.instrumentOnlyPrefixes=dev.timo,de."]}
    :zprint {:extra-deps {zprint/zprint {:mvn/version "1.2.9"}}}
