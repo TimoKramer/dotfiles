@@ -613,7 +613,7 @@ require('lazy').setup({
         },
         -- clangd = {},
         -- gopls = {},
-        pyright = {},
+        -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -623,6 +623,11 @@ require('lazy').setup({
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
         --
+        pylsp = {
+          plugins = {
+            pycodestyle = true,
+          },
+        },
 
         lua_ls = {
           -- cmd = {...},
