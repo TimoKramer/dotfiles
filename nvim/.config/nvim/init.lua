@@ -409,10 +409,28 @@ require('lazy').setup({
             filename_first = { reverse_directories = false },
           },
         },
-        -- pickers = {}
+        pickers = {
+          live_grep = {
+            file_ignore_patterns = { '^node_modules/', '^.git/', '^.venv/' },
+            only_sort_text = true,
+          },
+          grep_string = {
+            only_sort_text = true,
+          },
+          find_files = {
+            file_ignore_patterns = { '^node_modules/', '^.git/', '^.venv/' },
+            hidden = true,
+          },
+        },
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
+          },
+          fzf = {
+            fuzzy = true,
+            override_generic_sorter = true,
+            override_file_sorter = true,
+            case_mode = 'smart_case',
           },
         },
       }
