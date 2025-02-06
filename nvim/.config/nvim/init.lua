@@ -643,7 +643,9 @@ require('lazy').setup({
         --
         pylsp = {
           plugins = {
-            pycodestyle = true,
+            pycodestyle = {
+              maxLineLength = 120,
+            },
           },
         },
 
