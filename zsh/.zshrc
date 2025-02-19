@@ -96,6 +96,7 @@ bindkey  "^[[3"   delete-char
 export PATH="$PATH:$HOME/.pulumi/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/go/bin"
 
 # GRAALVM
 export GRAALVM_HOME="/usr/lib/jvm/java-21-graalvm"
