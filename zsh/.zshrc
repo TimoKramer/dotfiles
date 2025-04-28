@@ -147,16 +147,10 @@ alias top='btm'
 alias find='fd --hidden --no-ignore'
 alias jarcontent="jar tf"
 
-# PROMPT
-brname () {
-  a=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
-  if [ -n "$a" ]; then
-    echo " [$a]"
-  else
-    echo ""
-  fi
-}
-
-#export PROMPT="%B%(?..[%?] )%b%n $(brname)> "
-
 export GPG_TTY=$TTY
+
+
+# PURE
+fpath+=($HOME/.zsh/pure)
+autoload -U promptinit; promptinit
+prompt pure
