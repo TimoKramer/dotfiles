@@ -1,44 +1,121 @@
+colourful: true
+
+# Colors are in format of:
+# color/paletteRef (Description) #color code
+
+# Modus Operandi colors
+# Base (Primary Background) #ffffff
+# Main foreground #000000
+# Secondary foreground #505050
+# Light foreground #717171
+# Accent blue #0031a9
+# Accent green #006800
+# Accent red #a60000
+# Accent yellow #6f5500
+# Accent magenta #721045
+# Accent cyan #005e8b
+# Accent faint blue #003497
+# Accent faint green #2a5045
+# Accent faint red #7f0000
+# Accent faint magenta #7c318f
+
 filekinds:
-  normal:
-    foreground: "#972500"
-  directory:
-    foreground: "#3548cf"
-  symlink:
-    foreground: Cyan
-  executable:
-    foreground: Green
+  normal: {foreground: "#000000"}
+  directory: {foreground: "#0031a9"}
+  symlink: {foreground: "#003497"}
+  pipe: {foreground: "#505050"}
+  block_device: {foreground: "#721045"}
+  char_device: {foreground: "#6f5500"}
+  socket: {foreground: "#7c318f"}
+  special: {foreground: "#505050"}
+  executable: {foreground: "#006800"}
+  mount_point: {foreground: "#003497"}
+
 perms:
-  user_read:
-    foreground: Yellow
-    is_bold: true
-  user_write:
-    foreground: Red
-    is_bold: true
-  user_execute_file:
-    foreground: Green
-    is_bold: true
-  user_execute_other:
-    foreground: Green
-    is_bold: true
-  group_read:
-    foreground: Yellow
-  group_write:
-    foreground: Red
-  group_execute:
-    foreground: Green
-  other_read:
-    foreground: Yellow
-  other_write:
-    foreground: Red
-  other_execute:
-    foreground: Green
-filenames:
-  # Just change the icon glyph
-  Cargo.toml: {icon: {glyph: 🦀}}
-  Cargo.lock: {icon: {glyph: 🦀}}
-extensions:
-  # Change the filename color and icon
-  # NOTE: not all unicode glyphs support color changes
-  rs: {filename: {foreground: Red}, icon: {glyph: 🦀}}
-  # Change the icon glyph and color
-  nix: {icon: {glyph: ❄, style: {foreground: White}}}
+  user_read: {foreground: "#505050"}
+  user_write: {foreground: "#a60000"}
+  user_execute_file: {foreground: "#006800"}
+  user_execute_other: {foreground: "#006800"}
+  group_read: {foreground: "#505050"}
+  group_write: {foreground: "#a60000"}
+  group_execute: {foreground: "#006800"}
+  other_read: {foreground: "#505050"}
+  other_write: {foreground: "#a60000"}
+  other_execute: {foreground: "#006800"}
+  special_user_file: {foreground: "#721045"}
+  special_other: {foreground: "#a60000"}
+  attribute: {foreground: "#505050"}
+
+size:
+  major: {foreground: "#505050"}
+  minor: {foreground: "#003497"}
+  number_byte: {foreground: "#505050"}
+  number_kilo: {foreground: "#717171"}
+  number_mega: {foreground: "#003497"}
+  number_giga: {foreground: "#721045"}
+  number_huge: {foreground: "#721045"}
+  unit_byte: {foreground: "#505050"}
+  unit_kilo: {foreground: "#003497"}
+  unit_mega: {foreground: "#721045"}
+  unit_giga: {foreground: "#721045"}
+  unit_huge: {foreground: "#0031a9"}
+
+users:
+  user_you: {foreground: "#6f5500"}
+  user_root: {foreground: "#a60000"}
+  user_other: {foreground: "#721045"}
+  group_yours: {foreground: "#717171"}
+  group_other: {foreground: "#505050"}
+  group_root: {foreground: "#a60000"}
+
+links:
+  normal: {foreground: "#0031a9"}
+  multi_link_file: {foreground: "#003497"}
+
+git:
+  new: {foreground: "#006800"}
+  modified: {foreground: "#6f5500"}
+  deleted: {foreground: "#a60000"}
+  renamed: {foreground: "#003497"}
+  typechange: {foreground: "#721045"}
+  ignored: {foreground: "#505050"}
+  conflicted: {foreground: "#a60000"}
+
+git_repo:
+  branch_main: {foreground: "#505050"}
+  branch_other: {foreground: "#721045"}
+  git_clean: {foreground: "#006800"}
+  git_dirty: {foreground: "#a60000"}
+
+security_context:
+  colon: {foreground: "#505050"}
+  user: {foreground: "#0031a9"}
+  role: {foreground: "#721045"}
+  typ: {foreground: "#505050"}
+  range: {foreground: "#721045"}
+
+file_type:
+  image: {foreground: "#6f5500"}
+  video: {foreground: "#a60000"}
+  music: {foreground: "#0031a9"}
+  lossless: {foreground: "#505050"}
+  crypto: {foreground: "#717171"}
+  document: {foreground: "#505050"}
+  compressed: {foreground: "#721045"}
+  temp: {foreground: "#7f0000"}
+  compiled: {foreground: "#003497"}
+  build: {foreground: "#505050"}
+  source: {foreground: "#2a5045"}
+
+punctuation: {foreground: "#717171"}
+date: {foreground: "#003497"}
+inode: {foreground: "#505050"}
+blocks: {foreground: "#505050"}
+header: {foreground: "#505050"}
+octal: {foreground: "#0031a9"}
+flags: {foreground: "#721045"}
+
+symlink_path: {foreground: "#0031a9"}
+control_char: {foreground: "#003497"}
+broken_symlink: {foreground: "#a60000"}
+broken_path_overlay: {foreground: "#717171"}
