@@ -31,6 +31,20 @@ local keys = is_windows
 					args = { "wsl", "--cd", "~" },
 				}),
 			},
+			{
+				key = "%",
+				mods = "CTRL|SHIFT|ALT",
+				action = wt.action.SplitHorizontal({
+					args = { "wsl", "--cd", "~" },
+				}),
+			},
+			{
+				key = '"',
+				mods = "CTRL|SHIFT|ALT",
+				action = wt.action.SplitVertical({
+					args = { "wsl", "--cd", "~" },
+				}),
+			},
 		}
 	or {}
 
@@ -42,9 +56,9 @@ local default_prog = is_windows and {
 
 return {
 	color_scheme_dirs = { color_scheme_dirs },
-	color_scheme = "modus-operandi",
-	font = wt.font_with_fallback({ "Fira Code", "JetBrains Mono" }),
+	color_scheme = "modus_operandi",
 	font_size = 9.0,
+	font = wt.font("Fira Code"),
 	hide_tab_bar_if_only_one_tab = true,
 	keys = keys,
 	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
