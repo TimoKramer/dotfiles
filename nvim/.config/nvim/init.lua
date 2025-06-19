@@ -628,7 +628,9 @@ require('lazy').setup({
           autostart = true,
           root_dir = util.find_git_ancestor or util.root_pattern('workspace.edn', 'deps.edn', 'project.clj', 'bb.edn'),
         },
-        -- clangd = {},
+        clangd = {
+          cmd = { 'clangd --enable-config' },
+        },
         gopls = {
           settings = {
             gopls = {
