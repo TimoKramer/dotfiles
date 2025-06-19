@@ -18,4 +18,4 @@ precmd() {
 
 # Set the prompt to include vcs_info
 setopt prompt_subst
-PROMPT='%F{cyan}%~%f %F{green}${vcs_info_msg_0_}%f $ '
+PROMPT='%F{cyan}%~%f %F{green}${vcs_info_msg_0_}%f%(?..[%?] )$ '
