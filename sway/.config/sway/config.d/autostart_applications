@@ -16,7 +16,7 @@ exec_always swayidle -w before-sleep "gtklock -d"
 exec mako
 
 # # Start foot server
-exec_always --no-startup-id foot --server
+# exec_always --no-startup-id foot --server
 
 # Autotiling
 exec_always autotiling
@@ -45,3 +45,6 @@ exec_always nwg-drawer -r -c 7 -is 90 -mb 10 -ml 50 -mr 50 -mt 10
 # exec foot
 # for_window [app_id="firefox"] move left, resize set width 40 ppt
 # for_window [app_id="foot"] move right, resize set width 60 ppt
+
+# Mullvad
+exec mullvad-vpn

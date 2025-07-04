@@ -7,12 +7,13 @@ gaps outer 0
 
 # Hide titlebar on windows:
 default_border pixel 4
+default_floating_border pixel 4
 
 # Default Font
 font pango:Fira Code Regular 10
 
 # Thin borders:
-smart_borders no_gaps
+# smart_borders no_gaps
 
 # Set wallpaper:
 exec ~/.azotebg

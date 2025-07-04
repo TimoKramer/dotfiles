@@ -17,7 +17,7 @@ for_window [title="waybar_htop"] floating enable, resize set width 70 ppt height
 for_window [title="waybar_nmtui"] floating enable
 for_window [title="Save File"] floating enable
 for_window [app_id="firefox" title="Firefox — Sharing Indicator"] kill
-for_window [app_id="firefox" title="Picture-in-Picture (firefox)"] floating enable
+for_window [app_id="firefox" title="^Picture-in-Picture.*"] floating enable, sticky enable
 
 # Inhibit idle
 for_window [app_id="firefox"] inhibit_idle fullscreen

@@ -85,7 +85,7 @@ export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/go/bin"
 
 # GRAALVM
-export GRAALVM_HOME="/usr/lib/jvm/java-21-graalvm"
+export GRAALVM_HOME="/usr/lib/jvm/java-graalvm"
 
 # man
 # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
