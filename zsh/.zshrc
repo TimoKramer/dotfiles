@@ -17,6 +17,10 @@ export BAT_THEME="modus_operandi"
 # Autocomplete a slash after ..
 zstyle ':completion:*' special-dirs true
 
+# Autocomplete active
+autoload -Uz compinit
+compinit
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -78,14 +82,15 @@ bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
 bindkey  "^[[3"   delete-char
 
+# GRAALVM
+export GRAALVM_HOME="/usr/lib/jvm/java-graalvm"
+
 # PATH
 export PATH="$PATH:$HOME/.pulumi/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/go/bin"
-
-# GRAALVM
-export GRAALVM_HOME="/usr/lib/jvm/java-graalvm"
+export PATH="$PATH:$GRAALVM_HOME/bin"
 
 # man
 # export MANPAGER="sh -c 'col -bx | bat -l man -p'"

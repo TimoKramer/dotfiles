@@ -228,3 +228,7 @@ set $powermenu ~/.config/sway/scripts/power_menu.sh
     # Screenshot the current display and pipe to swappy
     bindsym Shift+Print exec ~/.config/sway/scripts/screenshot_display.sh
 
+#
+# Keyboard
+#
+    bindsym Alt+Shift+space input "type:keyboard" xkb_switch_layout next
