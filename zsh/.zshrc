@@ -96,3 +96,5 @@ export PATH="$PATH:$GRAALVM_HOME/bin"
 # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 export GPG_TTY=$TTY
+
+export LIBVIRT_DEFAULT_URI="qemu:///system"

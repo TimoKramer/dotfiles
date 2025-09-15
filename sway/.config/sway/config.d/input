@@ -23,7 +23,7 @@ exec_always {
 # # keyboard layouts, and uses Alt+Shift to toggle between them.
 input type:keyboard {
     xkb_layout us,de
-    xkb_variant ,nodeadkeys
+    xkb_variant basic,nodeadkeys
     xkb_options grp:alt_shift_toggle
 }
 # # Assign the same binding to "pkill -RTMIN+1 waybar" to send signal to

@@ -9,50 +9,30 @@ end
 
 local home = wt.home_dir
 local color_scheme_dirs = join(home, ".config", "wezterm", "colors")
---
--- local keys = is_windows
--- 		and {
--- 			{
--- 				key = "C",
--- 				mods = "CTRL",
--- 				action = wt.action.CopyTo("ClipboardAndPrimarySelection"),
--- 			},
--- 			{
--- 				key = "T",
--- 				mods = "CTRL|SHIFT",
--- 				action = wt.action.SpawnCommandInNewTab({
--- 					args = { "wsl", "--cd", "~" },
--- 				}),
--- 			},
--- 			{
--- 				key = "N",
--- 				mods = "CTRL|SHIFT",
--- 				action = wt.action.SpawnCommandInNewWindow({
--- 					args = { "wsl", "--cd", "~" },
--- 				}),
--- 			},
--- 			{
--- 				key = "%",
--- 				mods = "CTRL|SHIFT|ALT",
--- 				action = wt.action.SplitHorizontal({
--- 					args = { "wsl", "--cd", "~" },
--- 				}),
--- 			},
--- 			{
--- 				key = '"',
--- 				mods = "CTRL|SHIFT|ALT",
--- 				action = wt.action.SplitVertical({
--- 					args = { "wsl", "--cd", "~" },
--- 				}),
--- 			},
--- 		}
--- 	or {}
---
+
+local keys = {
+	{
+		key = "C",
+		mods = "CTRL",
+		action = wt.action.CopyTo("ClipboardAndPrimarySelection"),
+	},
+	{
+		key = "%",
+		mods = "CTRL|SHIFT|ALT",
+		action = wt.action.SplitPane({
+			direction = "Left",
+			command = { args = { "top" } },
+			size = { Percent = 50 },
+		}),
+	},
+}
+
 return {
 	color_scheme_dirs = { color_scheme_dirs },
 	color_scheme = "modus_operandi",
-	font_size = 9.0,
-	font = wt.font("Fira Code"),
+	font_size = 12.0,
+	font = wt.font("Agave Nerd Font Mono"),
 	hide_tab_bar_if_only_one_tab = true,
 	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
+	keys = keys,
 }

@@ -61,6 +61,7 @@ set $powermenu ~/.config/sway/scripts/power_menu.sh
         $mod+Down focus down
         $mod+Up focus up
         $mod+Right focus right
+        $mod+c focus child
         # Vim key support
         $mod+$left focus left
         $mod+$down focus down
