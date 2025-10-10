@@ -23,3 +23,5 @@ bindswitch --locked --reload {
   lid:on  output $laptop disable
   lid:off output $laptop enable
 }
+
+output \* bg /home/timo/Pictures/JamesWebb_DebrisDisk.png fill

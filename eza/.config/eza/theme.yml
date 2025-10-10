@@ -1,123 +1,148 @@
+# Modus Themes for eza
+# Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/eza.lua
 colourful: true
 
-# Colors are in format of:
-# color/paletteRef (Description) #color code
+# base colors
+define: &bg_main "#ffffff"
+define: &bg_dim = "#f2f2f2"
+define: &bg_alt = "#f0f0f0"
+define: &fg_main = "#000000"
+define: &fg_dim = "#595959"
+define: &fg_alt = "#193668"
+define: &border = "#9f9f9f"
+define: &border_highlight = "#3b3b3b"
 
-# Authentic Modus Operandi colors from Protesilaos Stavrou's theme
-# Base (Primary Background) #ffffff
-# Main foreground #000000
-# Secondary foreground #505050
-# Light foreground #70627f
-# Accent blue #354fcf (blue-warmer)
-# Accent magenta #531ab6 (magenta-cooler)
-# Accent green #005000 (fg-added)
-# Accent yellow #884900 (warning)
-# Accent cyan #005e8b (variable)
-# Accent red #721045 (fg-heading-4)
-# Red error #a60000
-# Green success #006800
-# Blue link #0031a9
-# Purple dim #5317ac
-# Cyan dim #005a5f
-# Yellow dim #7a4f2f
+# foreground colors
+define: &red "#a60000"
+define: &red_warmer "#972500"
+define: &red_cooler "#a0132f"
+define: &red_faint "#7f0000"
+define: &green "#006800"
+define: &green_warmer "#316500"
+define: &green_cooler "#00663f"
+define: &green_faint "#2a5045"
+define: &yellow "#6f5500"
+define: &yellow_warmer "#884900"
+define: &yellow_cooler "#7a4f2f"
+define: &yellow_faint "#624416"
+define: &blue "#0031a9"
+define: &blue_warmer "#3548cf"
+define: &blue_cooler "#0000b0"
+define: &blue_faint "#003497"
+define: &magenta "#721045"
+define: &magenta_warmer "#8f0075"
+define: &magenta_cooler "#531ab6"
+define: &magenta_faint "#7c318f"
+define: &cyan "#005e8b"
+define: &cyan_warmer "#3f578f"
+define: &cyan_cooler "#005f5f"
+define: &cyan_faint "#005077"
+define: &rust "#8a290f"
+define: &gold "#80601f"
+define: &olive "#56692d"
+define: &slate "#2f3f83"
+define: &indigo "#4a3a8a"
+define: &maroon "#731c52"
+define: &pink "#7b435c"
 
 filekinds:
-  normal: {foreground: "#000000"}
-  directory: {foreground: "#354fcf"}
-  symlink: {foreground: "#0031a9"}
-  pipe: {foreground: "#505050"}
-  block_device: {foreground: "#531ab6"}
-  char_device: {foreground: "#884900"}
-  socket: {foreground: "#721045"}
-  special: {foreground: "#70627f"}
-  executable: {foreground: "#006800"}
-  mount_point: {foreground: "#005e8b"}
+  normal: {foreground: *fg_main}
+  directory: {foreground: *blue_warmer}
+  symlink: {foreground: *blue}
+  pipe: {foreground: *fg_dim}
+  block_device: {foreground: *magenta_cooler}
+  char_device: {foreground: *yellow_warmer}
+  socket: {foreground: *magenta}
+  special: {foreground: *pink}
+  executable: {foreground: *green}
+  mount_point: {foreground: *cyan}
 
 perms:
-  user_read: {foreground: "#505050"}
-  user_write: {foreground: "#a60000"}
-  user_execute_file: {foreground: "#006800"}
-  user_execute_other: {foreground: "#006800"}
-  group_read: {foreground: "#505050"}
-  group_write: {foreground: "#a60000"}
-  group_execute: {foreground: "#006800"}
-  other_read: {foreground: "#505050"}
-  other_write: {foreground: "#a60000"}
-  other_execute: {foreground: "#006800"}
-  special_user_file: {foreground: "#531ab6"}
-  special_other: {foreground: "#a60000"}
-  attribute: {foreground: "#70627f"}
+  user_read: {foreground: *fg_dim}
+  user_write: {foreground: *red}
+  user_execute_file: {foreground: *green}
+  user_execute_other: {foreground: *green}
+  group_read: {foreground: *fg_dim}
+  group_write: {foreground: *red}
+  group_execute: {foreground: *green}
+  other_read: {foreground: *fg_dim}
+  other_write: {foreground: *red}
+  other_execute: {foreground: *green}
+  special_user_file: {foreground: *magenta_cooler}
+  special_other: {foreground: *red}
+  attribute: {foreground: *pink}
 
 size:
-  major: {foreground: "#505050"}
-  minor: {foreground: "#354fcf"}
-  number_byte: {foreground: "#70627f"}
-  number_kilo: {foreground: "#505050"}
-  number_mega: {foreground: "#354fcf"}
-  number_giga: {foreground: "#531ab6"}
-  number_huge: {foreground: "#721045"}
-  unit_byte: {foreground: "#70627f"}
-  unit_kilo: {foreground: "#354fcf"}
-  unit_mega: {foreground: "#531ab6"}
-  unit_giga: {foreground: "#721045"}
-  unit_huge: {foreground: "#354fcf"}
+  major: {foreground: *fg_dim}
+  minor: {foreground: *blue_warmer}
+  number_byte: {foreground: *pink}
+  number_kilo: {foreground: *rust}
+  number_mega: {foreground: *blue_warmer}
+  number_giga: {foreground: *magenta_cooler}
+  number_huge: {foreground: *magenta}
+  unit_byte: {foreground: *pink}
+  unit_kilo: {foreground: *rust}
+  unit_mega: {foreground: *blue_warmer}
+  unit_giga: {foreground: *magenta_cooler}
+  unit_huge: {foreground: *magenta}
 
 users:
-  user_you: {foreground: "#884900"}
-  user_root: {foreground: "#a60000"}
-  user_other: {foreground: "#531ab6"}
-  group_yours: {foreground: "#70627f"}
-  group_other: {foreground: "#505050"}
-  group_root: {foreground: "#a60000"}
+  user_you: {foreground: *yellow_warmer}
+  user_root: {foreground: *red}
+  user_other: {foreground: *magenta_cooler}
+  group_yours: {foreground: *pink}
+  group_other: {foreground: *fg_dim}
+  group_root: {foreground: *red}
 
 links:
-  normal: {foreground: "#0031a9"}
-  multi_link_file: {foreground: "#005e8b"}
+  normal: {foreground: *blue}
+  multi_link_file: {foreground: *cyan}
 
 git:
-  new: {foreground: "#005000"}
-  modified: {foreground: "#884900"}
-  deleted: {foreground: "#a60000"}
-  renamed: {foreground: "#005e8b"}
-  typechange: {foreground: "#531ab6"}
-  ignored: {foreground: "#70627f"}
-  conflicted: {foreground: "#721045"}
+  new: {foreground: *green}
+  modified: {foreground: *yellow_warmer}
+  deleted: {foreground: *red}
+  renamed: {foreground: *cyan}
+  typechange: {foreground: *magenta_cooler}
+  ignored: {foreground: *pink}
+  conflicted: {foreground: *magenta}
 
 git_repo:
-  branch_main: {foreground: "#505050"}
-  branch_other: {foreground: "#531ab6"}
-  git_clean: {foreground: "#005000"}
-  git_dirty: {foreground: "#a60000"}
+  branch_main: {foreground: *fg_dim}
+  branch_other: {foreground: *magenta_cooler}
+  git_clean: {foreground: *green}
+  git_dirty: {foreground: *red}
 
 security_context:
-  colon: {foreground: "#505050"}
-  user: {foreground: "#354fcf"}
-  role: {foreground: "#531ab6"}
-  typ: {foreground: "#70627f"}
-  range: {foreground: "#531ab6"}
+  colon: {foreground: *fg_dim}
+  user: {foreground: *blue_warmer}
+  role: {foreground: *magenta_cooler}
+  typ: {foreground: *pink}
+  range: {foreground: *magenta_cooler}
 
 file_type:
-  image: {foreground: "#884900"}
-  video: {foreground: "#721045"}
-  music: {foreground: "#354fcf"}
-  lossless: {foreground: "#005e8b"}
-  crypto: {foreground: "#70627f"}
-  document: {foreground: "#505050"}
-  compressed: {foreground: "#531ab6"}
-  temp: {foreground: "#884900"}
-  compiled: {foreground: "#005e8b"}
-  build: {foreground: "#70627f"}
-  source: {foreground: "#005000"}
+  image: {foreground: *yellow_warmer}
+  video: {foreground: *magenta}
+  music: {foreground: *blue_warmer}
+  lossless: {foreground: *cyan}
+  crypto: {foreground: *pink}
+  document: {foreground: *fg_dim}
+  compressed: {foreground: *magenta_cooler}
+  temp: {foreground: *yellow_warmer}
+  compiled: {foreground: *cyan}
+  build: {foreground: *pink}
+  source: {foreground: *green}
 
-punctuation: {foreground: "#70627f"}
-date: {foreground: "#005e8b"}
-inode: {foreground: "#505050"}
-blocks: {foreground: "#70627f"}
-header: {foreground: "#505050"}
-octal: {foreground: "#354fcf"}
-flags: {foreground: "#531ab6"}
+punctuation: {foreground: *pink}
+date: {foreground: *cyan}
+inode: {foreground: *fg_dim}
+blocks: {foreground: *pink}
+header: {foreground: *fg_dim}
+octal: {foreground: *blue_warmer}
+flags: {foreground: *magenta_cooler}
 
-symlink_path: {foreground: "#0031a9"}
-control_char: {foreground: "#005e8b"}
-broken_symlink: {foreground: "#a60000"}
-broken_path_overlay: {foreground: "#70627f"}
+symlink_path: {foreground: *blue}
+control_char: {foreground: *cyan}
+broken_symlink: {foreground: *red}
+broken_path_overlay: {foreground: *pink}
+
