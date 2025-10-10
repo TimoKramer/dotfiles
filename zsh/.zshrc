@@ -68,6 +68,7 @@ setopt	  hist_ignore_all_dups
 unsetopt  hist_ignore_space
 setopt    share_history      #Share history across terminals
 setopt    inc_append_history  #Immediately append to the history file, not just when a term is killed
+setopt    globdots             #Match dotfiles
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -92,9 +93,7 @@ export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$GRAALVM_HOME/bin"
 
-# man
-# export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-
 export GPG_TTY=$TTY
 
 export LIBVIRT_DEFAULT_URI="qemu:///system"
+export DOCKER_HOST="unix:///run/user/1000/podman/podman.sock"

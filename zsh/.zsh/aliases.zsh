@@ -6,7 +6,7 @@ alias ls='ls --color'
 alias ll="eza --all --reverse --sort=modified --long --group-directories-first --header --bytes"
 alias lls="eza --all --sort=name --long --group-directories-first --header --bytes"
 alias cat='bat'
-alias grep='rg --hidden --ignore-case'
+alias grep='rg --hidden --ignore-case --follow'
 alias gits='git status'
 alias gitc='git commit -S'
 alias gitd='git diff'
@@ -35,3 +35,4 @@ alias top='btm'
 alias find='fd --hidden --no-ignore'
 alias jarcontent="jar tf"
 alias grep="rg --hidden --follow --no-ignore"
+alias docker="podman"
