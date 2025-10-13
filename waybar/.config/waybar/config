@@ -10,6 +10,7 @@
 
     "modules-left": [
         "custom/launcher",
+	"niri/workspaces",
         "sway/workspaces",
         "sway/mode",
         "sway/window"
@@ -34,6 +35,24 @@
             "8": "8",
             "9": "9",
             "10": "10"
+        }
+    },
+
+    "niri/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "mail": "",
+            "browser": "",
+            "code": "",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "10",
         }
     },
 
@@ -180,7 +199,7 @@
 
     "custom/power": {
         "format":"⏻",
-        "on-click": "exec ~/.config/sway/scripts/power_menu.sh",
+        "on-click": "exec ~/.config/niri/power_menu.sh",
         "tooltip": false
     },
 }
