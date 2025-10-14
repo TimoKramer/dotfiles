@@ -36,11 +36,12 @@ binds {
     MOD+SHIFT+ESCAPE                     { show-hotkey-overlay; }
 
     // ─── Applications ───
-    MOD+RETURN                          hotkey-overlay-title="Open Terminal: foot" { spawn-sh "foot"; }
-    MOD+SPACE                           hotkey-overlay-title="Open App Launcher: fuzzel" { spawn-sh "fuzzel"; }
-    MOD+B                               hotkey-overlay-title="Open Browser: firefox" { spawn-sh "firefox"; }
-    MOD+I                               hotkey-overlay-title="Open KeePass: keepassxc" { spawn-sh "keepassxc"; }
-    MOD+ALT+L                           hotkey-overlay-title="Lock Screen: gtklock" { spawn-sh "gtklock"; }
+    MOD+RETURN                          hotkey-overlay-title="Open Terminal" { spawn-sh "foot"; }
+    MOD+M                               hotkey-overlay-title="Open Thunderbird" { spawn-sh "thunderbird"; }
+    MOD+D                               hotkey-overlay-title="Open App Launcher" { spawn-sh "fuzzel"; }
+    MOD+B                               hotkey-overlay-title="Open Browser" { spawn-sh "firefox"; }
+    MOD+I                               hotkey-overlay-title="Open KeePass" { spawn-sh "keepassxc"; }
+    MOD+ALT+L                           hotkey-overlay-title="Lock Screen" { spawn-sh "gtklock"; }
 
     // Please choose your own file manager
     MOD+E                             hotkey-overlay-title="File Manager: Yazi" { spawn-sh "foot yazi"; }

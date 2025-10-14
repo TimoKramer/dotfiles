@@ -32,7 +32,7 @@ alias vim='nvim'
 alias vimf='nvim $(fzf)'
 alias stow='stow --verbose --target=${HOME}'
 alias top='btm'
-alias find='fd --hidden --no-ignore'
+alias find='fd --hidden --no-ignore --follow'
 alias jarcontent="jar tf"
 alias grep="rg --hidden --follow --no-ignore"
 alias docker="podman"
