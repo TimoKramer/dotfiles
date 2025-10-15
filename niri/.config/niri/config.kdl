@@ -37,7 +37,8 @@ binds {
 
     // ─── Applications ───
     MOD+RETURN                          hotkey-overlay-title="Open Terminal" { spawn-sh "foot"; }
-    MOD+M                               hotkey-overlay-title="Open Thunderbird" { spawn-sh "thunderbird"; }
+    MOD+N                               hotkey-overlay-title="Open File Manager" { spawn-sh "foot yazi"; }
+    MOD+M                               hotkey-overlay-title="Open Mail" { spawn-sh "thunderbird"; }
     MOD+D                               hotkey-overlay-title="Open App Launcher" { spawn-sh "fuzzel"; }
     MOD+B                               hotkey-overlay-title="Open Browser" { spawn-sh "firefox"; }
     MOD+I                               hotkey-overlay-title="Open KeePass" { spawn-sh "keepassxc"; }
