@@ -8,6 +8,10 @@ input {
     keyboard {
         track-layout "global"
         numlock
+        xkb {
+            layout "us,de"
+            options "grp:alt_shift_toggle"
+        }
     }
 
     touchpad {
@@ -41,6 +45,7 @@ binds {
     MOD+M                               hotkey-overlay-title="Open Mail" { spawn-sh "thunderbird"; }
     MOD+D                               hotkey-overlay-title="Open App Launcher" { spawn-sh "fuzzel"; }
     MOD+B                               hotkey-overlay-title="Open Browser" { spawn-sh "firefox"; }
+    MOD+Y                               hotkey-overlay-title="Open Browser" { spawn-sh "firefox -P Youtube"; }
     MOD+I                               hotkey-overlay-title="Open KeePass" { spawn-sh "keepassxc"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen" { spawn-sh "gtklock"; }
 
