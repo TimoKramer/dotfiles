@@ -417,7 +417,8 @@ require('lazy').setup({
             only_sort_text = true,
           },
           find_files = {
-            file_ignore_patterns = { '^node_modules/', '^.git/', '^.venv/' },
+            -- file_ignore_patterns = { '^node_modules/', '^.git/', '^.venv/' },
+            find_command = { 'fd', '--type', 'f', '--color', 'never' },
             hidden = true,
           },
         },
