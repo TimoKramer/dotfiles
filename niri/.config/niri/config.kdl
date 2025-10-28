@@ -28,9 +28,18 @@ input {
 // You will have to remove "/-" and edit it before it takes effect.
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
 
-/- output "DP-1" {
-    mode "2560x1440@359.979" // Set resolution and refresh rate
-    scale 1 // No scaling (use 2 for HiDPI)
+output "eDP-1" {
+    mode "2880x1800@90.000" // Set resolution and refresh rate
+    scale 1.5 // No scaling (use 2 for HiDPI)
+}
+
+output "DP-3" {
+    scale 1.3
+}
+
+switch-events {
+    lid-close { spawn "notify-send" "The laptop lid is closed!"; }
+    lid-open { spawn "notify-send" "The laptop lid is open!"; }
 }
 
 // ────────────── Keybindings ──────────────
@@ -44,7 +53,7 @@ binds {
     MOD+N                               hotkey-overlay-title="Open File Manager" { spawn-sh "foot yazi"; }
     MOD+M                               hotkey-overlay-title="Open Mail" { spawn-sh "thunderbird"; }
     MOD+D                               hotkey-overlay-title="Open App Launcher" { spawn-sh "fuzzel"; }
-    MOD+B                               hotkey-overlay-title="Open Browser" { spawn-sh "firefox"; }
+    MOD+B                               hotkey-overlay-title="Open Browser" { spawn-sh "firefox -P Default"; }
     MOD+Y                               hotkey-overlay-title="Open Browser" { spawn-sh "firefox -P Youtube"; }
     MOD+I                               hotkey-overlay-title="Open KeePass" { spawn-sh "keepassxc"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen" { spawn-sh "gtklock"; }
@@ -63,6 +72,10 @@ binds {
     XF86AudioPause                      allow-when-locked=true { spawn-sh "playerctl play-pause"; }
     XF86AudioPlay                       allow-when-locked=true { spawn-sh "playerctl play-pause"; }
     XF86AudioPrev                       allow-when-locked=true { spawn-sh "playerctl previous"; }
+
+    // ─── Brightness Levels ───
+    XF86MonBrightnessUp                 { spawn-sh "brightnessctl -c backlight set +5%"; }
+    XF86MonBrightnessDown               { spawn-sh "brightnessctl -c backlight set 5%-"; }
 
     // ─── Window Movement and Focus ───
     MOD+Q                               { close-window; }
@@ -154,7 +167,8 @@ binds {
 
     // ─── Modes ───
     MOD+T                               { toggle-window-floating; }
-    MOD+F                               { fullscreen-window; }
+    // MOD+F                               { fullscreen-window; }
+    MOD+F                               { maximize-column; }
     MOD+W                               { toggle-column-tabbed-display; }
     MOD+R                               { switch-preset-column-width; }
 
