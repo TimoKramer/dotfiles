@@ -12,7 +12,8 @@ return {
     end,
   },
   {
-    'p00f/alabaster.nvim',
+    -- dir = '/home/timo/projects/alabaster.nvim',
+    url = 'https://codeberg.org/timokramer/alabaster.nvim.git',
     config = function()
       vim.cmd [[set background=light]]
       vim.cmd [[colorscheme alabaster]]
