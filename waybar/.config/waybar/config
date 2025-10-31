@@ -199,7 +199,7 @@
 
     "custom/power": {
         "format":"⏻",
-        "on-click": "exec ~/.config/niri/power_menu.sh",
+        "on-click": "exec ~/.config/niri/scripts/power_menu.sh",
         "tooltip": false
     },
 }
