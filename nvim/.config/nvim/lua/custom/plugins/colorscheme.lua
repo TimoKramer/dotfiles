@@ -9,6 +9,7 @@ return {
     config = function()
       vim.cmd [[set cursorcolumn]]
       vim.cmd [[highlight CursorColumn guibg=#d0d6ec]]
+      vim.cmd [[colorscheme modus_operandi]]
     end,
   },
   {
@@ -16,7 +17,6 @@ return {
     url = 'https://codeberg.org/timokramer/alabaster.nvim.git',
     config = function()
       vim.cmd [[set background=light]]
-      vim.cmd [[colorscheme alabaster]]
     end,
   },
 
