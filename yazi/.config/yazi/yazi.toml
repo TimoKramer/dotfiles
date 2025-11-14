@@ -1,11 +1,32 @@
+[mgr]
+show_hidden = true
 [opener]
+edit = [
+  { run = '$EDITOR "$@"', block = true, for = "linux" }
+]
 play = [
-  { run = 'vlc "$@"', orphan = true, for = "unix" }
+  { run = 'mpv "$@"', orphan = true, for = "linux" }
 ]
 pdf = [
-  { run = 'evince "$@"', orphan = true, for = "unix" }
+  { run = 'evince "$@"', orphan = true, for = "linux" }
 ]
+open = [
+  { run = 'xdg-open "$@"', desc = "Open", for = "linux" }
+]
+office = [
+  { run = 'libreoffice "$@"', orphan = true, for = "linux" }
+]
+
 [open]
 rules = [
-  { mime = "application/pdf", use = "pdf" }
+  { name = "*/", use = [ "edit", "open" ]},
+
+  { mime = "application/pdf", use = "pdf" },
+
+  { mime = "video/*", use = "play" },
+
+  { mime = "audio/*", use = "play" },
+
+  { mime = "application/oasis.opendocument.*", use = "office" },
+
 ]

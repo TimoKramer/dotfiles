@@ -163,7 +163,7 @@ binds {
 
     // ─── Modes ───
     MOD+T                               { toggle-window-floating; }
-    // MOD+F                               { fullscreen-window; }
+    MOD+SHIFT+F                         { fullscreen-window; }
     MOD+F                               { maximize-column; }
     MOD+W                               { toggle-column-tabbed-display; }
     MOD+R                               { switch-preset-column-width; }
@@ -194,7 +194,7 @@ spawn-sh-at-startup "swww img /home/timo/.config/sway/EndeavourOS_SpaceStation__
 spawn-sh-at-startup "waybar" // Launch waybar
 
 prefer-no-csd // Disable program decorations
-screenshot-path null // Disable screenshot saving
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 // ────────────── Layout Settings ──────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout

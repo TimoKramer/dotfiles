@@ -1,0 +1,6 @@
+;; clj -Tserve exec
+{:lib io.github.babashka/http-server,
+ :coord
+ {:git/tag "v0.1.14",
+  :git/sha "4af3c76b80bd7759211e87e98182742b48cb2725",
+  :git/url "https://github.com/babashka/http-server.git"}}
