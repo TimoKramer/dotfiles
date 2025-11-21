@@ -188,10 +188,12 @@ binds {
 // ────────────── Startup Applications ──────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-sh-at-startup
 
-spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &" // Polkit
-spawn-sh-at-startup "swww-daemon" // Wallpaper daemon pkill swaybg
-spawn-sh-at-startup "swww img /home/timo/.config/sway/EndeavourOS_SpaceStation__3840x2160.png" // Set wallpaper
+// spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &" // Polkit
+// spawn-sh-at-startup "swww-daemon" // Wallpaper daemon pkill swaybg
+// spawn-sh-at-startup "swww img /home/timo/.config/sway/EndeavourOS_SpaceStation__3840x2160.png" // Set wallpaper
 spawn-sh-at-startup "waybar" // Launch waybar
+
+spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 
 prefer-no-csd // Disable program decorations
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"

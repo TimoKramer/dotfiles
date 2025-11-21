@@ -1,5 +1,5 @@
 [mgr]
-show_hidden = true
+show_hidden = false
 [opener]
 edit = [
   { run = '$EDITOR "$@"', block = true, for = "linux" }
@@ -19,7 +19,7 @@ office = [
 
 [open]
 rules = [
-  { name = "*/", use = [ "edit", "open" ]},
+  # { name = "*/", use = [ "edit", "open" ]},
 
   { mime = "application/pdf", use = "pdf" },
 
