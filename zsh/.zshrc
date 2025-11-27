@@ -15,7 +15,7 @@ export EDITOR="nvim"
 export BAT_THEME="modus_operandi"
 
 # Autocomplete a slash after ..
-zstyle ':completion:*' special-dirs true
+zstyle ':completion:*' special-dirs false
 
 # Autocomplete active
 autoload -Uz compinit

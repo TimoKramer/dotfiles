@@ -169,9 +169,9 @@ binds {
     MOD+R                               { switch-preset-column-width; }
 
     // ─── Screenshots ───
-    CTRL+SHIFT+1                        { screenshot; }
-    CTRL+SHIFT+2                        { screenshot-screen; }
-    CTRL+SHIFT+3                        { screenshot-window; }
+    CTRL+SHIFT+1                        { spawn-sh "~/.config/niri/scripts/screenshot.sh --region"; }
+    CTRL+SHIFT+2                        { spawn-sh "~/.config/niri/scripts/screenshot.sh --window"; }
+    CTRL+SHIFT+3                        { spawn-sh "~/.config/niri/scripts/screenshot.sh --screen"; }
 
     // ─── Emergency Escape Key ───
     // Use this when a fullscreen app blocks your keybinds.
