@@ -76,6 +76,26 @@ return {
           disconnect = '⏏',
         },
       },
+      layouts = {
+        {
+          elements = {
+            { id = 'scopes', size = 0.25 },
+            { id = 'breakpoints', size = 0.25 },
+            { id = 'stacks', size = 0.25 },
+            { id = 'watches', size = 0.25 },
+          },
+          size = 0.25, -- width in columns for sidebar
+          position = 'left',
+        },
+        {
+          elements = {
+            { id = 'repl', size = 0.5 },
+            { id = 'console', size = 0.5 },
+          },
+          size = 0.25, -- height as percentage for bottom panel
+          position = 'bottom',
+        },
+      },
     }
 
     -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.

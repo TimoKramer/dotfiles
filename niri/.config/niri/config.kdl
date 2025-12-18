@@ -52,7 +52,7 @@ binds {
     MOD+B                               hotkey-overlay-title="Open Browser" { spawn-sh "firefox -P Default"; }
     MOD+Y                               hotkey-overlay-title="Open Youtube" { spawn-sh "firefox -P Youtube"; }
     MOD+I                               hotkey-overlay-title="Open KeePass" { spawn-sh "keepassxc"; }
-    MOD+ALT+L                           hotkey-overlay-title="Lock Screen" { spawn-sh "gtklock"; }
+    MOD+ALT+L                           hotkey-overlay-title="Lock Screen" { spawn-sh "niri msg action switch-layout 0 && gtklock"; }
 
     // Please choose your own file manager
     MOD+E                             hotkey-overlay-title="File Manager: Yazi" { spawn-sh "foot yazi"; }
@@ -271,6 +271,7 @@ animations {
 
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id=r#"pavucontrol$"#
     match app-id=r#"pavucontrol$"#
     open-floating true // Always float Firefox PiP windows
 }

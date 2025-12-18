@@ -3,3 +3,4 @@ nvim/.config/nvim/plugin/packer_compiled.lua
 clojure/.clojure/.clj-kondo/
 clojure/.clojure/.cpcache/
 clojure/.clojure/.lsp/
+zsh/.zsh/completions/

@@ -29,4 +29,6 @@ rules = [
 
   { mime = "application/oasis.opendocument.*", use = "office" },
 
+  { mime = "application/vnd.openxmlformats-officedocument.*", use = "office" },
+
 ]

@@ -10,7 +10,7 @@ confirm_action() {
 
 case $SELECTION in
     *"󰌾 Lock"*)
-        gtklock;;
+        niri msg action switch-layout 0 && gtklock;;
     *"󰤄 Suspend"*)
         if confirm_action "Suspend"; then
             systemctl suspend

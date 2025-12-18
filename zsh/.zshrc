@@ -6,7 +6,7 @@ done
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-fpath=(/usr/local/share/zsh-completions $fpath)
+fpath=(~/.zsh/completions $fpath)
 
 # Setup terminal, and turn on colors
 export TERM=xterm-256color
@@ -64,7 +64,7 @@ HISTFILE=~/.zsh_history     #Where to save history to disk
 SAVEHIST=5000               #Number of history entries to save to disk
 #HISTDUP=erase               #Erase duplicates in the history file
 setopt    append_history     #Append history to the history file (no overwriting)
-setopt	  hist_ignore_all_dups
+setopt    hist_ignore_all_dups
 unsetopt  hist_ignore_space
 setopt    share_history      #Share history across terminals
 setopt    inc_append_history  #Immediately append to the history file, not just when a term is killed

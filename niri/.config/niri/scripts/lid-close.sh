@@ -1,3 +1,3 @@
 #!/bin/env bash
 
-gtklock && systemctl suspend
+niri msg action switch-layout 0 && gtklock && systemctl suspend

@@ -1,2 +1,2 @@
 #!/usr/bin/env zsh
-bb ~/.local/bin/random-doc.clj
+#bb ~/.local/bin/random-doc.clj
