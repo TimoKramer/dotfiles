@@ -10,32 +10,13 @@
 
     "modules-left": [
         "custom/launcher",
-	"niri/workspaces",
-        "sway/workspaces",
-        "sway/mode",
-        "sway/window"
+        "niri/workspaces",
     ],
 
     "custom/launcher": {
         "format":"<span size='x-large'></span>",
         "on-click": "exec nwg-drawer",
         "tooltip": false
-    },
-
-    "sway/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "format": "{icon}",
-        "format-icons": {
-            "3": "3",
-            "4": "4",
-            "5": "5",
-            "6": "6",
-            "7": "7",
-            "8": "8",
-            "9": "9",
-            "10": "10"
-        }
     },
 
     "niri/workspaces": {
@@ -46,7 +27,7 @@
             "mail": "",
             "browser": "",
             "code": "",
-            "4": "4",
+            "logseq": "",
             "5": "5",
             "6": "6",
             "7": "7",
@@ -56,19 +37,12 @@
         }
     },
 
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>",
-        "tooltip": false
-    },
-
-    "sway/window": {
-        "format": "{}",
-        //"all-outputs": true, // Active window shows only on active display when commented
-        "max-length": 120
+    "niri/language": {
+        "format": "{short}",
     },
 
 // Configuration - modules-center
-    
+
     "modules-center": [
         "network"
     ],
@@ -87,7 +61,6 @@
 // Configuration - modules-right
 
     "modules-right": [
-        "custom/keyboard-layout",
         "idle_inhibitor",
         "cpu",
         "memory",
@@ -95,19 +68,10 @@
         "pulseaudio",
         "battery",
         "clock",
+        "niri/language",
         "tray",
         "custom/power"
     ],
-
-    "custom/keyboard-layout": {
-      	"exec": "i=$(swaymsg -t get_inputs); echo \"\"; echo \"$i\" | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
-        "format": "",
-        // Interval set only as a fallback; use signal to update the module more immediately
-        "interval": 30,
-        // See example config for sending signal to Waybar in ~/.config/sway/config.d/input
-        "signal": 1,
-        "on-click": "~/.config/waybar/scripts/keyhint.sh"
-    },
 
     "idle_inhibitor": {
         "format": "{icon}",
@@ -128,7 +92,7 @@
         },
         "on-click": "footclient -T waybar_htop -e htop"
     },
-    
+
     "memory": {
         "interval": 5,
         "format": "{:>3}%",
