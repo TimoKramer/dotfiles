@@ -34,7 +34,7 @@ output "DP-3" {
 }
 
 // switch-events {
-//     lid-close { spawn "swayidle -w before-sleep 'gtklock -d' lock 'gtklock-d'"; }
+//     lid-close { spawn "niri msg action switch-layout 0 && swayidle -w before-sleep 'gtklock -d' lock 'gtklock-d'"; }
 //     lid-open { spawn "notify-send" "The laptop lid is open!"; }
 // }
 
@@ -53,6 +53,7 @@ binds {
     MOD+Y                               hotkey-overlay-title="Open Youtube" { spawn-sh "firefox -P Youtube"; }
     MOD+I                               hotkey-overlay-title="Open KeePass" { spawn-sh "keepassxc"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen" { spawn-sh "niri msg action switch-layout 0 && gtklock"; }
+    MOD+ALT+A                           hotkey-overlay-title="Activate all outputs" { spawn-sh "~/.config/niri/scripts/monitor-hotplug.sh"; }
 
     // Please choose your own file manager
     MOD+E                             hotkey-overlay-title="File Manager: Yazi" { spawn-sh "foot yazi"; }
@@ -191,7 +192,8 @@ binds {
 // spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &" // Polkit
 // spawn-sh-at-startup "swww-daemon" // Wallpaper daemon pkill swaybg
 // spawn-sh-at-startup "swww img /home/timo/.config/sway/EndeavourOS_SpaceStation__3840x2160.png" // Set wallpaper
-spawn-sh-at-startup "waybar" // Launch waybar
+// spawn-sh-at-startup "waybar" // Launch waybar
+// spawn-sh-at-startup "swayidle -w timeout 601 'niri msg action power-off-monitors' timeout 600 'gtklock -d' before-sleep 'gtklock -d'"
 
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 

@@ -4,6 +4,6 @@
 
 # Enable all outputs that exist
 niri msg -j outputs | jq -r 'keys[]' | while read -r output; do
-    echo "activating ${output}"
+    echo "activating display ${output}" | systemd-cat -p info -t monitor-hotplug
     niri msg output "$output" on
 done

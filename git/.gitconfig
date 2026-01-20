@@ -5,6 +5,7 @@
     path = ~/.gitconfig.private
 [push]
     autoSetupRemote = true
+	default = nothing
 [pull]
     rebase = true
 [core]
