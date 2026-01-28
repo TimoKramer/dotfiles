@@ -7,6 +7,9 @@ edit = [
 play = [
   { run = 'mpv "$@"', orphan = true, for = "linux" }
 ]
+image = [
+  { run = 'imv "$@"', orphan = true, for = "linux" }
+]
 pdf = [
   { run = 'evince "$@"', orphan = true, for = "linux" }
 ]
@@ -26,6 +29,8 @@ rules = [
   { mime = "video/*", use = "play" },
 
   { mime = "audio/*", use = "play" },
+
+  { mime = "image/*", use = "image" },
 
   { mime = "application/oasis.opendocument.*", use = "office" },
 

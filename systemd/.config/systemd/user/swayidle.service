@@ -1,0 +1,8 @@
+[Unit]
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/swayidle -w timeout 601 '/home/timo/.config/niri/scripts/swayidle.sh' timeout 600 'gtklock -d' before-sleep 'gtklock -d'
+Restart=on-failure

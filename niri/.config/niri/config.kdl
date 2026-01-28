@@ -47,7 +47,7 @@ binds {
     // ─── Applications ───
     MOD+RETURN                          hotkey-overlay-title="Open Terminal" { spawn-sh "foot"; }
     MOD+N                               hotkey-overlay-title="Open File Manager" { spawn-sh "foot yazi"; }
-    MOD+M                               hotkey-overlay-title="Open Mail" { spawn-sh "thunderbird"; }
+    MOD+M                               hotkey-overlay-title="Open Mail" { spawn-sh "/usr/bin/chromium --profile-directory=Default --app-id=bancgfmehdjbgbdegmkbpkedapiclkma"; }
     MOD+D                               hotkey-overlay-title="Open App Launcher" { spawn-sh "fuzzel"; }
     MOD+B                               hotkey-overlay-title="Open Browser" { spawn-sh "firefox -P Default"; }
     MOD+Y                               hotkey-overlay-title="Open Youtube" { spawn-sh "firefox -P Youtube"; }
@@ -164,6 +164,8 @@ binds {
 
     // ─── Modes ───
     MOD+T                               { toggle-window-floating; }
+    //MOD+T                               { spawn-sh "niri msg action move-floating-window -x 100 -y 200;" }
+    MOD+SHIFT+T                         { switch-focus-between-floating-and-tiling; }
     MOD+SHIFT+F                         { fullscreen-window; }
     MOD+F                               { maximize-column; }
     MOD+W                               { toggle-column-tabbed-display; }
