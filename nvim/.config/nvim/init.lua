@@ -657,10 +657,25 @@ require('lazy').setup({
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
         --
-        pylsp = {
-          plugins = {
-            pycodestyle = {
-              maxLineLength = 120,
+        basedpyright = {
+          settings = {
+            basedpyright = {
+              analysis = {
+                typeCheckingMode = 'standard', -- 'off', 'basic', 'standard', 'strict', 'all'
+                autoImportCompletions = true,
+                diagnosticSeverityOverrides = {
+                  reportUnusedImport = 'information',
+                  reportUnusedVariable = 'information',
+                },
+              },
+            },
+          },
+        },
+        ruff = {
+          -- Ruff handles linting and import sorting
+          init_options = {
+            settings = {
+              lineLength = 120,
             },
           },
         },
@@ -740,7 +755,7 @@ require('lazy').setup({
       formatters_by_ft = {
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
+        python = { 'ruff_format', 'ruff_organize_imports' },
         --
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.

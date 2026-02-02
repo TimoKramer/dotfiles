@@ -1,7 +1,7 @@
 return {
   {
     'olical/conjure',
-    ft = { 'python', 'clojure' },
+    ft = { 'clojure' },
     dependencies = {
       {
         'PaterJason/cmp-conjure',
@@ -37,7 +37,7 @@ return {
   },
   {
     'gpanders/nvim-parinfer',
-    ft = { 'python', 'clojure' },
+    ft = { 'clojure' },
     config = function()
       vim.g.parinfer_force_balance = true
     end,
