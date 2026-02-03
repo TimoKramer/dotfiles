@@ -1,0 +1,11 @@
+
+output "eDP-1" {
+    mode "2880x1800@90.000" // Set resolution and refresh rate
+    scale 1.5 // No scaling (use 2 for HiDPI)
+}
+
+
+output "DP-3" {
+    scale 1.3
+}
+

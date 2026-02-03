@@ -29,7 +29,7 @@ local keys = {
 
 return {
 	color_scheme_dirs = { color_scheme_dirs },
-	color_scheme = "modus_operandi",
+	color_scheme = "dank-theme",
 	font_size = 12.0,
 	font = wt.font("Agave Nerd Font Mono"),
 	hide_tab_bar_if_only_one_tab = true,
