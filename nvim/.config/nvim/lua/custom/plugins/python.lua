@@ -45,7 +45,6 @@ return {
   -- Virtual Environment Selector
   {
     'linux-cultist/venv-selector.nvim',
-    branch = 'regexp',
     dependencies = {
       'neovim/nvim-lspconfig',
       'nvim-telescope/telescope.nvim',
@@ -53,15 +52,14 @@ return {
     },
     ft = 'python',
     opts = {
-      auto_refresh = false,
-      search = true,
-      search_venv_managers = true,
-      name = { 'venv', '.venv', 'env', '.env' },
-      notify_user_on_venv_activation = true,
+      settings = {
+        options = {
+          notify_user_on_venv_activation = true,
+        },
+      },
     },
     keys = {
       { '<leader>cv', '<cmd>VenvSelect<cr>', desc = '[C]hange [V]env' },
-      { '<leader>cV', '<cmd>VenvSelectCached<cr>', desc = '[C]hange [V]env (cached)' },
     },
   },
 
