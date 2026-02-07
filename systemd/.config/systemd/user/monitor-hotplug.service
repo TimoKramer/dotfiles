@@ -1,6 +1,0 @@
-[Unit]
-Description=Monitor Hotplug Handler for udev rule
-
-[Service]
-Type=oneshot
-ExecStart=/home/timo/.config/niri/scripts/monitor-hotplug.sh

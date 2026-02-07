@@ -1,0 +1,11 @@
+[Unit]
+Description=Mailbox.org WebDAV Mount
+
+[Mount]
+What=https://dav.mailbox.org/servlet/webdav.infostore/Userstore
+Where=/home/timo/mailboxdrive
+Type=davfs
+Options=user,uid=timo,rw
+
+[Install]
+WantedBy=default.target
