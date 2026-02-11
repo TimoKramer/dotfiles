@@ -6,7 +6,7 @@ import threading
 import time
 
 import pystray
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 
 MOUNT_UNIT = "home-timo-mailboxdrive.mount"
 CHECK_INTERVAL = 10  # seconds
@@ -23,11 +23,32 @@ def is_mounted():
 
 
 def create_icon(color):
-    """Create a simple colored circle icon."""
+    """Create a DAV logo icon."""
     size = 64
     img = Image.new("RGBA", (size, size), (0, 0, 0, 0))
     draw = ImageDraw.Draw(img)
-    draw.ellipse([4, 4, size - 4, size - 4], fill=color)
+
+    # Try to find a bold font, fall back to default
+    font = None
+    for path in [
+        "/usr/share/fonts/TTF/DejaVuSans-Bold.ttf",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+        "/usr/share/fonts/noto/NotoSans-Bold.ttf",
+    ]:
+        try:
+            font = ImageFont.truetype(path, 26)
+            break
+        except OSError:
+            continue
+    if font is None:
+        font = ImageFont.load_default()
+
+    bbox = draw.textbbox((0, 0), "DAV", font=font)
+    tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
+    x = (size - tw) // 2 - bbox[0]
+    y = (size - th) // 2 - bbox[1]
+
+    draw.text((x, y), "DAV", fill=color, font=font)
     return img
 
 
