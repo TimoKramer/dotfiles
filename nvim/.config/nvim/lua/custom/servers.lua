@@ -13,7 +13,7 @@ M.ensure_installed = {
 
 M.servers = {
   clojure_lsp = {
-    root_markers = { 'deps.edn', 'project.clj', 'bb.edn', 'workspace.edn', '.git' },
+    root_markers = { 'deps.edn', 'project.clj', 'bb.edn', 'build.boot', 'shadow-cljs.edn', 'workspace.edn', '.git' },
   },
   clangd = {
     cmd = { 'clangd', '--enable-config' },
