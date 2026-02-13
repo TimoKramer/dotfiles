@@ -36,3 +36,6 @@ alias find='fd --hidden --no-ignore --follow'
 alias jarcontent="jar tf"
 alias grep="rg --hidden --follow --no-ignore"
 alias docker="podman"
+alias work='timer 45m && notify-send --icon="/home/timo/Pictures/Clippy.png" "Work Timer is up! Take a Break 😊" && paplay /usr/share/sounds/freedesktop/stereo/message.oga'
+alias rest='timer 5m && notify-send --icon="/home/timo/Pictures/Clippy.png" "Break is over! Get back to work 😬" && paplay /usr/share/sounds/freedesktop/stereo/message.oga'
+alias top="dgop"
