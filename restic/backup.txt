@@ -1,0 +1,4 @@
+/home/timo/Nextcloud/
+/home/timo/.thunderbird/
+/home/timo/Documents/
+/home/timo/mailboxdrive/
