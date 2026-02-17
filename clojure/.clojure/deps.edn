@@ -49,7 +49,7 @@
                               cider/cider-nrepl {:mvn/version "0.58.0"}
                               djblue/portal {:mvn/version "0.62.0"}
                               io.github.paintparty/fireworks {:mvn/version "0.18.0"}}
-                 :jvm-opts ["--enable-preview" "-Djdk.attach.allowAttachSelf"]
+                 :jvm-opts ["--enable-preview" "-Djdk.attach.allowAttachSelf" "--enable-native-access=ALL-UNNAMED"]
                  :main-opts ["-e" "(set! *warn-on-reflection* true)"
                              "-m" "nrepl.cmdline"
                              "--middleware" "[cider.nrepl/cider-middleware,portal.nrepl/wrap-portal]"]}

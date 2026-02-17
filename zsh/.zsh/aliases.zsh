@@ -6,7 +6,7 @@ alias ls='ls --color'
 alias ll="eza --all --reverse --sort=modified --long --group-directories-first --header --bytes"
 alias lls="eza --all --sort=name --long --group-directories-first --header --bytes"
 alias cat='bat'
-alias grep='rg --hidden --ignore-case --follow --smart-case'
+alias grep='rg --hidden --ignore-case --follow --smart-case --no-messages'
 alias gits='git status'
 alias gitc='git commit -S'
 alias gitd='git diff'
@@ -31,10 +31,8 @@ alias cljserve='clojure -Sdeps "{:deps {nasus {:mvn/version \"LATEST\"}}}" -m ht
 alias vim='nvim'
 alias vimf='nvim $(fzf)'
 alias stow='stow --verbose --target=${HOME}'
-alias top='btm'
 alias find='fd --hidden --no-ignore --follow'
 alias jarcontent="jar tf"
-alias grep="rg --hidden --follow --no-ignore"
 alias docker="podman"
 alias work='timer 45m && notify-send --icon="/home/timo/Pictures/Clippy.png" "Work Timer is up! Take a Break 😊" && paplay /usr/share/sounds/freedesktop/stereo/message.oga'
 alias rest='timer 5m && notify-send --icon="/home/timo/Pictures/Clippy.png" "Break is over! Get back to work 😬" && paplay /usr/share/sounds/freedesktop/stereo/message.oga'
