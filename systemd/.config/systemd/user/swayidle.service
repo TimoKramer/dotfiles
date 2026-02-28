@@ -1,0 +1,11 @@
+[Unit]
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/swayidle -w timeout 601 '/home/timo/.config/niri/scripts/swayidle.sh' timeout 600 'dms ipc call lock lock' before-sleep 'dms ipc call lock lock'
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target
