@@ -1,0 +1,10 @@
+#!/bin/sh
+# Wait for StatusNotifierWatcher (DMS system tray) before starting Mullvad
+i=0
+while [ "$i" -lt 50 ]; do
+    dbus-send --session --dest=org.kde.StatusNotifierWatcher --print-reply \
+        /StatusNotifierWatcher org.freedesktop.DBus.Peer.Ping >/dev/null 2>&1 && break
+    sleep 0.1
+    i=$((i + 1))
+done
+exec "/opt/Mullvad VPN/mullvad-gui" "$@"
