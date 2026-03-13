@@ -1,9 +1,0 @@
-[Unit]
-Description=Mailbox.org WebDAV Automount
-
-[Automount]
-Where=/home/timo/mailboxdrive
-TimeoutIdleSec=300
-
-[Install]
-WantedBy=default.target
