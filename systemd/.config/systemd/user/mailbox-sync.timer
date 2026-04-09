@@ -1,0 +1,13 @@
+[Unit]
+Description=Mailbox.org WebDAV Sync alle 2 Minuten
+
+[Timer]
+# Erster Lauf 1 Minute nach Boot/Login, dann alle 2 Minuten
+OnBootSec=1min
+OnUnitActiveSec=2min
+# Falls der Rechner geschlafen hat: beim Aufwachen nachholen
+Persistent=true
+Unit=mailbox-sync.service
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,16 @@
+[Unit]
+Description=Mailbox.org WebDAV Watcher (inotify -> rclone bisync)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/mailbox-watcher.sh
+Restart=on-failure
+RestartSec=10
+# Bei zu vielen Neustarts aufgeben (5 Versuche in 5 Minuten)
+StartLimitBurst=5
+StartLimitIntervalSec=300
+
+[Install]
+WantedBy=default.target
