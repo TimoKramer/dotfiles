@@ -38,10 +38,14 @@ git clone https://github.com/956MB/vscode-light-modern.yazi.git %AppData%\yazi\c
 
 Add the these lines to your `theme.toml` configuration file to use it:
 
+
 ```toml
 [flavor]
-light = "vscode-light-modern"
+use = "vscode-light-modern"
+# For Yazi 0.4 and above:
+dark = "vscode-light-modern"
 ```
+
 
 ## 📜 License
 

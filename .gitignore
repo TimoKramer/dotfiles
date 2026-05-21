@@ -4,3 +4,5 @@ clojure/.clojure/.clj-kondo/
 clojure/.clojure/.cpcache/
 clojure/.clojure/.lsp/
 zsh/.zsh/completions/
+niri/.config/niri/dms/profiles/
+niri/.config/niri/dms/outputs.kdl
