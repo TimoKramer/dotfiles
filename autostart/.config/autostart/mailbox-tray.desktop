@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Mailbox Status Tray
-Exec=/home/timo/.local/bin/mailbox-tray.py
-Icon=drive-harddisk
-X-GNOME-Autostart-enabled=true

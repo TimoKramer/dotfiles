@@ -1,8 +1,13 @@
 [Unit]
-Description=Mailbox.org WebDAV Sync (periodischer Pull)
-After=network-online.target
-Wants=network-online.target
+Description=Mailbox.org rclone bisync (sync + watcher + tray, all-in-one)
+After=graphical-session.target
+PartOf=graphical-session.target
 
 [Service]
-Type=oneshot
-ExecStart=%h/.local/bin/mailbox-sync.sh
+Type=simple
+ExecStart=%h/.local/bin/mailbox-sync.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=graphical-session.target

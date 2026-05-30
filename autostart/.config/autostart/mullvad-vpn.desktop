@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Mullvad VPN
-Exec=/home/timo/.local/bin/mullvad-vpn-autostart
+Exec=~/.local/bin/mullvad-vpn-autostart
 Terminal=false
 Type=Application
 Icon=mullvad-vpn
