@@ -11,7 +11,7 @@ image = [
   { run = 'imv "$@"', orphan = true, for = "linux" }
 ]
 pdf = [
-  { run = 'evince "$@"', orphan = true, for = "linux" }
+  { run = 'zathura "$@"', orphan = true, for = "linux" }
 ]
 open = [
   { run = 'xdg-open "$@"', desc = "Open", for = "linux" }
