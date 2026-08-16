@@ -1,0 +1,9 @@
+version = "1"
+
+[default]
+  repository = "local:/run/media/timo/ext4/restic_backup"
+  password-file = "password.txt"
+
+  [default.backup]
+    verbose = true
+    source = [ "/home/timo/Sync/", "/home/timo/.thunderbird/", "/home/timo/Documents/", "/home/timo/mailboxdrive/" ]
