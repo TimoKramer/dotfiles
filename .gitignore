@@ -14,3 +14,11 @@ niri/.config/niri/dms/layout.kdl
 foot/.config/foot/dank-colors.ini
 nvim/.config/nvim/colors/dms.lua
 nvim/.config/nvim/lua/lualine/themes/dms.lua
+niri/.config/niri/*.kdl.backup*
+DankMaterialShell/.config/DankMaterialShell/firefox.css
+
+# DMS runtime state, hardware-derived config, and registry theme downloads
+DankMaterialShell/.config/DankMaterialShell/.firstlaunch
+DankMaterialShell/.config/DankMaterialShell/.changelog-*
+DankMaterialShell/.config/DankMaterialShell/monitors.json
+DankMaterialShell/.config/DankMaterialShell/themes/

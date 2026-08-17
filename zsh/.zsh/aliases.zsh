@@ -8,7 +8,7 @@ alias lls="eza --all --sort=name --long --group-directories-first --header --byt
 alias cat='bat'
 alias grep='rg --hidden --ignore-case --follow --smart-case --no-messages'
 alias gits='git status'
-alias gitc='git commit -S'
+alias gitc='git commit'
 alias gitd='git diff'
 alias gitds='git diff --staged'
 alias gitl='git log --graph --oneline --pretty="format:%h %G? %aN  %s"'
