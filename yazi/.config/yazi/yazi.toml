@@ -2,22 +2,22 @@
 show_hidden = false
 [opener]
 edit = [
-  { run = '$EDITOR "$@"', block = true, for = "linux" }
+  { run = '${EDITOR:-vi} %s', block = true, for = "linux" }
 ]
 play = [
-  { run = 'mpv "$@"', orphan = true, for = "linux" }
+  { run = 'mpv %s', orphan = true, for = "linux" }
 ]
 image = [
-  { run = 'imv "$@"', orphan = true, for = "linux" }
+  { run = 'imv %s', orphan = true, for = "linux" }
 ]
 pdf = [
-  { run = 'mupdf "$@"', orphan = true, for = "linux" }
+  { run = 'mupdf %s', orphan = true, for = "linux" }
 ]
 open = [
-  { run = 'xdg-open "$@"', desc = "Open", for = "linux" }
+  { run = 'xdg-open %s1', desc = "Open", for = "linux" }
 ]
 office = [
-  { run = 'libreoffice "$@"', orphan = true, for = "linux" }
+  { run = 'libreoffice %s', orphan = true, for = "linux" }
 ]
 
 [open]
@@ -32,7 +32,7 @@ rules = [
 
   { mime = "image/*", use = "image" },
 
-  { mime = "application/oasis.opendocument.*", use = "office" },
+  { mime = "application/vnd.oasis.opendocument.*", use = "office" },
 
   { mime = "application/vnd.openxmlformats-officedocument.*", use = "office" },
 
