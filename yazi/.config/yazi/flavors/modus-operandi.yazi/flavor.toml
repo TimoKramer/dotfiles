@@ -1,0 +1,172 @@
+# Modus Themes for Yazi
+# Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/yazi.lua
+#
+# Written against the Yazi theme schema of v26.8.15 and newer.
+# Use it either as `~/.config/yazi/theme.toml`, or as the `flavor.toml` of a
+# flavor package in `~/.config/yazi/flavors/<name>.yazi/`.
+#:schema https://yazi-rs.github.io/schemas/theme.json
+
+[mgr]
+# NOTE: can be combined with a tmTheme (Sublime colorscheme file) to highlight
+# the code preview, see the `bat` extra for a matching tmTheme
+# syntect_theme = "path/to/tmTheme"
+
+cwd = { fg = "#005e8b", italic = true }
+
+# Find
+find_keyword  = { fg = "#000000", bg = "#dfa0f0", bold = true }
+find_position = { fg = "#3548cf", bg = "#f2f2f2", bold = true }
+
+# Symlink
+symlink_target = { fg = "#595959", italic = true }
+
+# Marker
+marker_copied   = { fg = "#316500", bg = "#316500" }
+marker_cut      = { fg = "#a60000", bg = "#a60000" }
+marker_marked   = { fg = "#721045", bg = "#721045" }
+marker_selected = { fg = "#0031a9", bg = "#0031a9" }
+
+# Count
+count_copied   = { fg = "#ffffff", bg = "#316500" }
+count_cut      = { fg = "#ffffff", bg = "#972500" }
+count_selected = { fg = "#ffffff", bg = "#3548cf" }
+
+# Border
+border_symbol = "│"
+border_style  = { fg = "#3b3b3b" }
+
+# Tabs
+[tabs]
+active   = { fg = "#ffffff", bg = "#0031a9", bold = true }
+inactive = { fg = "#595959", bg = "#f0f0f0" }
+
+# Mode
+[mode]
+normal_main = { fg = "#ffffff", bg = "#0031a9", bold = true }
+normal_alt  = { fg = "#0031a9", bg = "#f0f0f0" }
+
+select_main = { fg = "#ffffff", bg = "#8f0075", bold = true }
+select_alt  = { fg = "#8f0075", bg = "#f0f0f0" }
+
+unset_main = { fg = "#ffffff", bg = "#8a290f", bold = true }
+unset_alt  = { fg = "#8a290f", bg = "#f0f0f0" }
+
+# Indicator of the hovered file
+[indicator]
+parent  = { bg = "#dae5ec" }
+current = { bg = "#dae5ec" }
+preview = { bg = "#dae5ec" }
+
+# Status bar
+[status]
+# Permissions
+perm_sep   = { fg = "#595959" }
+perm_type  = { fg = "#0031a9" }
+perm_read  = { fg = "#6f5500" }
+perm_write = { fg = "#a60000" }
+perm_exec  = { fg = "#006800" }
+
+# Progress
+progress_label  = { fg = "#000000", bold = true }
+progress_normal = { fg = "#0031a9", bg = "#f0f0f0" }
+progress_error  = { fg = "#a60000", bg = "#f0f0f0" }
+
+# Which
+[which]
+border          = { fg = "#3b3b3b" }
+cols            = 3
+mask            = { bg = "#f0f0f0" }
+cand            = { fg = "#005e8b" }
+rest            = { fg = "#0031a9" }
+desc            = { fg = "#721045" }
+separator       = "  "
+separator_style = { fg = "#595959" }
+
+# Confirmation
+[confirm]
+border  = { fg = "#3b3b3b" }
+title   = { fg = "#0031a9" }
+body    = { fg = "#000000" }
+list    = { fg = "#000000" }
+btn_yes = { fg = "#ffffff", bg = "#0031a9", bold = true }
+btn_no  = { fg = "#000000" }
+
+# Spotter
+[spot]
+border   = { fg = "#3b3b3b" }
+title    = { fg = "#0031a9" }
+tbl_col  = { fg = "#0031a9" }
+tbl_cell = { fg = "#000000", bg = "#dae5ec" }
+
+# Notify
+[notify]
+title_info  = { fg = "#0000b0" }
+title_warn  = { fg = "#6f5500" }
+title_error = { fg = "#a60000" }
+
+# Picker
+[pick]
+border   = { fg = "#3b3b3b" }
+active   = { fg = "#000000", bg = "#9f9f9f" }
+inactive = { fg = "#000000" }
+
+# Input
+[input]
+border   = { fg = "#0000b0" }
+title    = { fg = "#000000" }
+value    = { fg = "#8f0075" }
+selected = { bg = "#9f9f9f" }
+
+# Completion
+[cmp]
+border   = { fg = "#0000b0" }
+active   = { fg = "#000000", bg = "#9f9f9f" }
+inactive = { fg = "#000000" }
+
+# Tasks
+[tasks]
+border  = { fg = "#3b3b3b" }
+title   = { fg = "#000000" }
+hovered = { fg = "#000000", bg = "#9f9f9f" }
+
+# Help
+[help]
+border  = { fg = "#3b3b3b" }
+chord   = { fg = "#006800" }
+action  = { fg = "#721045" }
+hovered = { fg = "#000000", bg = "#9f9f9f" }
+
+[filetype]
+
+rules = [
+	# Images
+	{ mime = "**/image/*", fg = "#005e8b" },
+
+	# Media
+	{ mime = "**/{audio,video}/*", fg = "#884900" },
+
+	# Archives
+	{ mime = "**/application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#721045" },
+
+	# Documents
+	{ mime = "**/application/{pdf,doc,rtf}", fg = "#005e8b" },
+	{ mime = "**/application/vnd.*", fg = "#005e8b" },
+
+	# Virtual file system
+	{ mime = "vfs/{absent,stale}", fg = "#595959" },
+
+	# Empty files
+	# { mime = "**/inode/x-empty", fg = "#a60000" },
+
+	# Special files
+	{ url = "*" , is = "orphan", fg = "#000000", bg = "#ff8f88" },
+	{ url = "*" , is = "dummy" , fg = "#000000", bg = "#ff8f88" },
+	{ url = "*/", is = "dummy" , fg = "#000000", bg = "#ff8f88" },
+	{ url = "*" , is = "exec"  , fg = "#006800" },
+
+	{ url = "*.rs", fg = "#8a290f" },
+
+	# Fallback
+	{ url = "*/", fg = "#0031a9" }
+]
+    
